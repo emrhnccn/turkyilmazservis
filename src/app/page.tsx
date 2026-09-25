@@ -29,7 +29,7 @@ async function getData() {
       settings: settings || {
         phone: '0552 116 41 28',
         siteName: 'Türkyılmaz Teknik Servis',
-        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası']
+        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
       }, 
       services: activeServices, 
       caseStudies 
@@ -39,7 +39,7 @@ async function getData() {
       settings: {
         phone: '0552 116 41 28',
         siteName: 'Türkyılmaz Teknik Servis',
-        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası']
+        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
       }, 
       services: DEFAULT_SERVICES, 
       caseStudies: DEFAULT_CASES 
@@ -60,7 +60,7 @@ export default async function Home() {
 
   const serviceAreas = settings?.serviceAreas && settings.serviceAreas.length > 0 
     ? settings.serviceAreas 
-    : ['Gebze Merkez', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
+    : ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
 
   const faqs = [
     {
@@ -143,7 +143,7 @@ export default async function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 border border-blue-200">
             <ShieldCheck className="w-4 h-4 text-blue-600" />
-            <span>Kocaeli & Çevre Bölgelerde Aynı Gün Yerinde Servis</span>
+            <span>Tüm Kocaeli Genelinde Aynı Gün Yerinde Servis</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight sm:leading-none">
@@ -279,19 +279,20 @@ export default async function Home() {
       {/* 5. SAHADAN GERÇEK ÖRNEKLER / GALERİ */}
       <RepairGallery items={caseStudies} />
 
-      {/* 6. SERVİS BÖLGELERİ & GOOGLE HARİTA BÖLÜMÜ */}
+      {/* 6. SERVİS BÖLGELERİ & TÜM KOCAELİ HARİTASI */}
       <section className="py-16 px-4 max-w-6xl mx-auto">
         <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
+            
             <div>
               <span className="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
                 Hizmet Bölgelerimiz
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-3 tracking-tight">
-                Kocaeli ve Çevresinde Kapınıza Kadar Geliyoruz
+                Tüm Kocaeli Genelinde Kapınıza Kadar Geliyoruz
               </h2>
               <p className="text-slate-600 mt-3 text-sm leading-relaxed">
-                Gezici servis araçlarımızla bildirdiğiniz arızalara en kısa sürede ulaşıyor, arızayı yerinde tespit edip hızlıca çözüme kavuşturuyoruz.
+                Kocaeli’nin tüm ilçelerine tam donanımlı mobil servis araçlarımızla ulaşıyor; arızanızı yerinde tespit edip garantili olarak çözüme kavuşturuyoruz.
               </p>
 
               <div className="mt-6">
@@ -313,7 +314,7 @@ export default async function Home() {
 
               <div className="mt-8 p-4 rounded-2xl bg-blue-50/70 border border-blue-100 flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-bold text-blue-900">Bölgenizde Servis Var mı?</p>
+                  <p className="text-xs font-bold text-blue-900">Bölgenize Servis İsteyin</p>
                   <p className="text-[11px] text-blue-700">Hemen arayıp randevu saatini öğrenin.</p>
                 </div>
                 <a
@@ -325,18 +326,19 @@ export default async function Home() {
               </div>
             </div>
 
+            {/* TÜM KOCAELİ'Yİ GÖSTEREN GENİŞ AÇILI HARİTA */}
             <div className="w-full h-80 sm:h-96 rounded-2xl border border-slate-200 shadow-inner bg-slate-100 overflow-hidden">
               <iframe
-                title="Türkyılmaz Teknik Servis Hizmet Bölgesi"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48332.22851410183!2d29.40428587448834!3d40.80373461280327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb207d57a22ffb%3A0x6b4845ec2d346067!2sGebze%2C%20Kocaeli!5e0!3m2!1str!2str!4v1711000000000!5m2!1str!2str"
+                title="Türkyılmaz Teknik Servis Tüm Kocaeli Hizmet Bölgesi"
+                src="https://maps.google.com/maps?q=Kocaeli,%20T%C3%BCrkiye&t=&z=10&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen={false}
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
+
           </div>
         </div>
       </section>
@@ -407,7 +409,7 @@ export default async function Home() {
         </div>
       </footer>
 
-      {/* 10. SAĞ ALTA SABİTLENMİŞ AÇILIR WHATSAPP ŞABLON KARTI */}
+      {/* 10. SAĞ ALTA SABİTLENMİŞ WHATSAPP WIDGETI */}
       <WhatsappWidget phone={phone} />
 
     </main>

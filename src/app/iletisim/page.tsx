@@ -9,7 +9,8 @@ import {
   ArrowLeft, 
   ShieldCheck, 
   CheckCircle2,
-  CalendarCheck
+  CalendarCheck,
+  Navigation
 } from 'lucide-react'
 
 export const revalidate = 60
@@ -20,13 +21,15 @@ async function getSettings() {
     return settings || {
       phone: '0552 116 41 28',
       siteName: 'Türkyılmaz Teknik Servis',
-      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
+      address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
+      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
     }
   } catch {
     return {
       phone: '0552 116 41 28',
       siteName: 'Türkyılmaz Teknik Servis',
-      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
+      address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
+      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
     }
   }
 }
@@ -35,7 +38,13 @@ export default async function ContactPage() {
   const settings = await getSettings()
   const phone = settings?.phone || '0552 116 41 28'
   const cleanPhone = phone.replace(/\s+/g, '').replace('+', '')
-  const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
+  const shopAddress = settings?.address || 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli'
+  const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük']
+
+  // Google Haritalar Yol Tarifi ve Doğrudan Konum Linki
+  const encodedAddress = encodeURIComponent(shopAddress)
+  const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=16&ie=UTF8&iwloc=&output=embed`
+  const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 py-10 px-4 sm:px-6 lg:px-8">
@@ -64,10 +73,10 @@ export default async function ContactPage() {
             Hemen Ulaşın
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-slate-900 mt-4 tracking-tight">
-            İletişim & Servis Randevusu
+            İletişim & Dükkan Konumumuz
           </h1>
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
-            Kocaeli ve çevre ilçelerde aynı gün yerinde servis için bize telefonla veya WhatsApp şablonları üzerinden anında ulaşabilirsiniz.
+            Darıca atölyemize uğrayabilir veya tüm Kocaeli genelinde kapınıza mobil teknik servis çağırabilirsiniz.
           </p>
         </div>
 
@@ -98,23 +107,47 @@ export default async function ContactPage() {
             </div>
           </div>
 
-          {/* Sağ Kolon: Google Harita & Bilgiler */}
+          {/* Sağ Kolon: Tam Dükkan Konum Haritası & Açık Adres */}
           <div className="lg:col-span-7 space-y-6">
+            
+            {/* DÜKKAN KONUM HARİTASI */}
             <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm">
-              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-100">
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
                 <iframe
-                  title="Türkyılmaz Teknik Servis Konum"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48332.22851410183!2d29.40428587448834!3d40.80373461280327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb207d57a22ffb%3A0x6b4845ec2d346067!2sGebze%2C%20Kocaeli!5e0!3m2!1str!2str!4v1711000000000!5m2!1str!2str"
+                  title="Türkyılmaz Teknik Servis Darıca Dükkan Konumu"
+                  src={mapEmbedUrl}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen={false}
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
                 />
+              </div>
+
+              {/* Dükkan Açık Adresi ve Yol Tarifi Butonu */}
+              <div className="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Atölye / Dükkan Adresi</h4>
+                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                      {shopAddress}
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href={googleMapsDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition shrink-0"
+                >
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>Yol Tarifi Al</span>
+                </a>
               </div>
             </div>
 
+            {/* Çalışma Saatleri & Garanti Kartları */}
             <div className="grid sm:grid-cols-2 gap-4">
               <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
@@ -134,10 +167,11 @@ export default async function ContactPage() {
               </div>
             </div>
 
+            {/* Mobil Hizmet Verilen İlçeler */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
               <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-3">
-                <MapPin className="w-4 h-4 text-rose-600" />
-                Hizmet Verdiğimiz İlçeler & Mahalleler
+                <MapPin className="w-4 h-4 text-blue-600" />
+                Gezici Araçla Hizmet Verdiğimiz İlçeler
               </h4>
               <div className="flex flex-wrap gap-2">
                 {serviceAreas.map((area: string, idx: number) => (
