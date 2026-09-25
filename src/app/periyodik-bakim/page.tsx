@@ -8,11 +8,8 @@ import {
   CheckCircle2, 
   PhoneCall, 
   ShieldCheck, 
-  Sparkles,
-  Flame,
-  Snowflake,
-  Wrench,
-  Clock
+  Flame, 
+  Clock 
 } from 'lucide-react'
 
 export default function MaintenancePage() {
@@ -54,35 +51,25 @@ export default function MaintenancePage() {
   }
 
   return (
-    <main className="relative min-h-screen bg-zinc-950 text-slate-100 py-10 px-4 sm:px-6 lg:px-10 selection:bg-orange-500 selection:text-white overflow-hidden">
+    <main className="relative min-h-screen bg-zinc-950 text-slate-100 py-10 px-4 sm:px-6 lg:px-10 selection:bg-red-600 selection:text-white overflow-hidden">
       
-      {/* --- ARKA PLAN IŞIKLARI & BOŞLUKLARI DOLDURAN AMBİYANS --- */}
-      <div className="pointer-events-none absolute -left-48 top-1/4 w-96 h-96 bg-orange-600/15 rounded-full blur-[130px] -z-10" />
-      <div className="pointer-events-none absolute -right-48 top-1/2 w-96 h-96 bg-amber-500/15 rounded-full blur-[130px] -z-10" />
-      <div className="pointer-events-none absolute left-1/2 -top-20 -translate-x-1/2 w-[700px] h-[300px] bg-orange-500/10 rounded-full blur-[140px] -z-10" />
-
-      {/* Arka plan nokta deseni */}
-      <div 
-        className="pointer-events-none absolute inset-0 opacity-[0.03] -z-10"
-        style={{
-          backgroundImage: 'radial-gradient(circle at 1px 1px, #ff8c00 1px, transparent 0)',
-          backgroundSize: '36px 36px'
-        }}
-      />
+      {/* Kenar Parıltıları */}
+      <div className="pointer-events-none absolute -left-48 top-1/4 w-96 h-96 bg-red-600/10 rounded-full blur-3xl -z-10" />
+      <div className="pointer-events-none absolute -right-48 top-1/2 w-96 h-96 bg-rose-600/10 rounded-full blur-3xl -z-10" />
 
       <div className="max-w-6xl mx-auto relative">
         
         {/* Üst Bar */}
-        <div className="flex items-center justify-between pb-6 mb-8 border-b border-zinc-800/80">
+        <div className="flex items-center justify-between pb-6 mb-8 border-b border-zinc-800">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-400 hover:text-orange-400 transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-300 hover:text-red-500 transition"
           >
             <ArrowLeft className="w-4 h-4" /> Ana Sayfaya Dön
           </Link>
           <a
             href="tel:05521164128"
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:scale-105 active:scale-95"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 text-white font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-red-600/20 transition-all hover:scale-105 active:scale-95"
           >
             <PhoneCall className="w-4 h-4 animate-pulse" />
             <span>0552 116 41 28</span>
@@ -91,45 +78,44 @@ export default function MaintenancePage() {
 
         {/* Başlık */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/60 px-4 py-1.5 rounded-full border border-orange-500/30">
+          <span className="text-xs font-bold text-red-500 tracking-wider uppercase bg-red-950/60 px-4 py-1.5 rounded-full border border-red-600/30">
             Periyodik Bakım Takip Sistemi
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
             Cihazınızın Bakım Zamanını Takip Edelim
           </h1>
-          <meta name="description" content="Kombi için 6 ayda bir, beyaz eşyalarınız için yılda bir periyodik bakım takvimi oluşturun. Gebze ve Darıca bölgesi garantili servis." />
-          <p className="text-zinc-400 mt-3 text-sm sm:text-base">
+          <p className="text-zinc-300 mt-3 text-sm sm:text-base">
             Kombiniz için 6 ayda bir, beyaz eşyalarınız için yılda bir periyodik bakım kaydı oluşturun; günü geldiğinde ustamız hatırlatsın.
           </p>
         </div>
 
-        {/* Ana Yapı: Sol ve Sağ Geniş Ekran Kartlarıyla Birlikte */}
+        {/* Ana Yapı */}
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           
-          {/* Sol Kolon: Bilgilendirici Yan Kartlar (Geniş ekranları şık doldurur) */}
+          {/* Sol Kolon */}
           <div className="lg:col-span-4 space-y-4">
-            <div className="bg-zinc-900/80 border border-zinc-800 p-5 rounded-3xl">
-              <div className="w-10 h-10 rounded-2xl bg-orange-500/10 text-orange-400 flex items-center justify-center mb-3">
+            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-3xl">
+              <div className="w-10 h-10 rounded-2xl bg-red-600/10 text-red-500 flex items-center justify-center mb-3">
                 <Flame className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-white text-sm">Neden 6 Ayda Bir Kombi Bakımı?</h3>
-              <p className="text-xs text-zinc-400 mt-1.5 leading-relaxed">
+              <p className="text-xs text-zinc-300 mt-1.5 leading-relaxed">
                 Kış öncesi ve sonrası brülör, genleşme tankı ve eşanjör temizliği yakıt faturasında %25 tasarruf sağlar.
               </p>
             </div>
 
-            <div className="bg-zinc-900/80 border border-zinc-800 p-5 rounded-3xl">
-              <div className="w-10 h-10 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center mb-3">
+            <div className="bg-zinc-900 border border-zinc-800 p-5 rounded-3xl">
+              <div className="w-10 h-10 rounded-2xl bg-rose-600/10 text-rose-500 flex items-center justify-center mb-3">
                 <Clock className="w-5 h-5" />
               </div>
               <h3 className="font-bold text-white text-sm">Akıllı Otomatik Hatırlatma</h3>
-              <p className="text-xs text-zinc-400 mt-1.5 leading-relaxed">
+              <p className="text-xs text-zinc-300 mt-1.5 leading-relaxed">
                 Kayıt oluşturduğunuzda sistemimize işlenir. Bakım ayı geldiğinde servis ekibimiz size önceden ulaşır.
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-orange-950/40 to-zinc-950 border border-orange-500/30 p-5 rounded-3xl">
-              <div className="flex items-center gap-2 text-orange-400 text-xs font-bold uppercase mb-1">
+            <div className="bg-gradient-to-br from-red-950/40 to-zinc-950 border border-red-600/30 p-5 rounded-3xl">
+              <div className="flex items-center gap-2 text-red-500 text-xs font-bold uppercase mb-1">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Garantili İşçilik</span>
               </div>
@@ -139,15 +125,15 @@ export default function MaintenancePage() {
             </div>
           </div>
 
-          {/* Sağ Kolon: Form veya Başarı Kartı (8 Birim) */}
+          {/* Sağ Kolon */}
           <div className="lg:col-span-8">
             {successData ? (
-              <div className="bg-zinc-900 rounded-3xl border border-orange-500/40 p-8 sm:p-12 text-center shadow-2xl animate-in zoom-in-95 duration-300">
-                <div className="w-16 h-16 bg-orange-950/80 text-orange-400 rounded-full border border-orange-500/30 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-zinc-900 rounded-3xl border border-red-600/40 p-8 sm:p-12 text-center shadow-2xl animate-in zoom-in-95 duration-300">
+                <div className="w-16 h-16 bg-red-950/80 text-red-500 rounded-full border border-red-600/30 flex items-center justify-center mx-auto mb-4">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
                 <h2 className="text-2xl font-black text-white">Periyodik Bakım Kaydınız Oluşturuldu!</h2>
-                <p className="text-zinc-400 text-sm mt-2 max-w-md mx-auto">
+                <p className="text-zinc-300 text-sm mt-2 max-w-md mx-auto">
                   Bilgileriniz servis yönetim sistemimize başarıyla işlendi.
                 </p>
 
@@ -155,7 +141,7 @@ export default function MaintenancePage() {
                   <span className="text-xs text-zinc-400 font-bold uppercase tracking-wider block">
                     Hesaplanan Bir Sonraki Bakım Tarihi
                   </span>
-                  <span className="text-2xl font-black text-orange-400 mt-1 block">
+                  <span className="text-2xl font-black text-red-500 mt-1 block">
                     {new Date(successData.nextDate).toLocaleDateString('tr-TR', {
                       day: 'numeric',
                       month: 'long',
@@ -176,7 +162,7 @@ export default function MaintenancePage() {
                   </button>
                   <Link
                     href="/"
-                    className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md"
+                    className="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 text-white font-bold text-xs px-6 py-3 rounded-xl transition shadow-md"
                   >
                     Ana Sayfaya Git
                   </Link>
@@ -202,7 +188,7 @@ export default function MaintenancePage() {
                         placeholder="Örn: Ahmet Yılmaz"
                         value={formData.fullName}
                         onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 outline-none transition"
+                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-red-600 focus:ring-1 focus:ring-red-600/20 outline-none transition"
                       />
                     </div>
 
@@ -216,7 +202,7 @@ export default function MaintenancePage() {
                         placeholder="Örn: 0552 116 41 28"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 outline-none transition"
+                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-red-600 focus:ring-1 focus:ring-red-600/20 outline-none transition"
                       />
                     </div>
                   </div>
@@ -229,7 +215,7 @@ export default function MaintenancePage() {
                       <select
                         value={formData.deviceType}
                         onChange={(e) => setFormData({ ...formData, deviceType: e.target.value })}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 outline-none transition cursor-pointer"
+                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white focus:border-red-600 focus:ring-1 focus:ring-red-600/20 outline-none transition cursor-pointer"
                       >
                         <option value="kombi">🔥 Kombi (6 Ayda Bir Periyot)</option>
                         <option value="klima">❄️ Klima (6 Ayda Bir Periyot)</option>
@@ -255,7 +241,7 @@ export default function MaintenancePage() {
                         placeholder="Örn: Darıca Fevziçakmak Mah."
                         value={formData.address}
                         onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 outline-none transition"
+                        className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-red-600 focus:ring-1 focus:ring-red-600/20 outline-none transition"
                       />
                     </div>
                   </div>
@@ -269,14 +255,14 @@ export default function MaintenancePage() {
                       placeholder="Örn: Cihazın garantisi bitti, kışa girmeden önce petek temizliği de yapılsın."
                       value={formData.notes}
                       onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                      className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-orange-500 focus:ring-1 focus:ring-orange-500/20 outline-none transition"
+                      className="w-full bg-zinc-950 border border-zinc-800 rounded-2xl p-3.5 text-sm text-white placeholder-zinc-500 focus:border-red-600 focus:ring-1 focus:ring-red-600/20 outline-none transition"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 disabled:opacity-50 text-white font-extrabold text-sm py-4 rounded-2xl shadow-xl shadow-orange-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01] active:scale-[0.99]"
+                    className="w-full bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-700 hover:to-rose-800 disabled:opacity-50 text-white font-extrabold text-sm py-4 rounded-2xl shadow-xl shadow-red-600/20 transition-all flex items-center justify-center gap-2 cursor-pointer hover:scale-[1.01] active:scale-[0.99]"
                   >
                     {loading ? (
                       <span>Sisteme Kaydediliyor...</span>
@@ -294,20 +280,6 @@ export default function MaintenancePage() {
 
         </div>
 
-      </div>
-      {/* CCN Teknoloji İmzası */}
-      <div className="mt-16 pt-6 border-t border-zinc-900/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-400">
-        <p>© {new Date().getFullYear()} Türkyılmaz Beyaz Eşya Servisi</p>
-        <a
-          href="https://affan-portfolio-gilt.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 hover:border-orange-500/50 px-3.5 py-1.5 rounded-full transition-all duration-300 shadow-sm"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-orange-500 group-hover:animate-ping" />
-          <span className="text-zinc-400 group-hover:text-zinc-200 transition">Tasarım & Yazılım:</span>
-          <span className="font-bold text-orange-400 group-hover:text-orange-300 transition">CCN Teknoloji</span>
-        </a>
       </div>
     </main>
   )

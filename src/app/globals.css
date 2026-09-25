@@ -26,7 +26,11 @@ body {
 }
 /* --- TÜRKYILMAZ SERVİS ULTRA-MODERN GLOW & SHIMMER EFEKTLERİ --- */
 
-/* --- GPU DESTEKLİ, REPAINT YAPMAYAN MODERN ANİMASYONLAR --- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- GPU DESTEKLİ, REPAINT YAPMAYAN MODERN ANİMASYONLAR (KIRMIZI TEMA) --- */
 
 @keyframes shimmer {
   0% {
@@ -37,7 +41,6 @@ body {
   }
 }
 
-/* box-shadow yerine sadece opacity ve transform kullanan composited animasyon */
 @keyframes pulseGlowGpu {
   0%, 100% {
     transform: scale(1) translateZ(0);
@@ -63,7 +66,7 @@ body {
   will-change: transform;
 }
 
-.glow-orange-pulse {
+.glow-red-pulse {
   animation: pulseGlowGpu 2.5s infinite ease-in-out;
   will-change: transform, opacity;
 }
@@ -80,7 +83,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Hafifletilmiş, render-blocking olmayan grid dokusu */
+/* Kırmızı tonlu hafif teknik ızgara dokusu */
 .tech-grid-bg {
   background-image: 
     linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),

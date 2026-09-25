@@ -90,13 +90,13 @@ export default async function Home() {
   ]
 
   return (
-    <main className="relative min-h-screen bg-zinc-950 text-slate-100 selection:bg-orange-500 selection:text-white pb-28 sm:pb-0 overflow-x-hidden tech-grid-bg">
+    <main className="relative min-h-screen bg-zinc-950 text-slate-100 selection:bg-red-600 selection:text-white pb-28 sm:pb-0 overflow-x-hidden tech-grid-bg">
       
-      {/* GPU YORMMAYAN HAFİF ARKA PLAN PARILTILARI */}
-      <div className="pointer-events-none absolute -left-40 top-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl -z-10" />
-      <div className="pointer-events-none absolute -right-40 top-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl -z-10" />
+      {/* KIRMIZI ARKA PLAN PARILTILARI */}
+      <div className="pointer-events-none absolute -left-40 top-0 w-96 h-96 bg-red-600/10 rounded-full blur-3xl -z-10" />
+      <div className="pointer-events-none absolute -right-40 top-1/4 w-96 h-96 bg-rose-600/10 rounded-full blur-3xl -z-10" />
 
-      {/* 1. CANLI SERVİS & NÖBETÇİ RADAR ŞERİDİ */}
+      {/* 1. CANLI SERVİS RADARI */}
       <div className="bg-zinc-900/90 border-b border-zinc-800 text-xs py-2.5 px-4 backdrop-blur-md">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
           <div className="flex items-center gap-2">
@@ -109,7 +109,7 @@ export default async function Home() {
             </span>
           </div>
           <div className="flex items-center gap-4 text-xs text-zinc-200">
-            <span className="flex items-center gap-1 text-orange-400 font-semibold">
+            <span className="flex items-center gap-1 text-red-500 font-semibold">
               <Clock className="w-3.5 h-3.5" /> Ortalama Varış: 25 - 45 Dk
             </span>
             <span className="hidden md:inline text-zinc-500">•</span>
@@ -122,7 +122,7 @@ export default async function Home() {
       <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-800">
         <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-12 h-12 rounded-2xl overflow-hidden bg-black border border-zinc-800 group-hover:border-orange-500 transition-colors flex items-center justify-center shadow-lg shadow-orange-500/10">
+            <div className="relative w-12 h-12 rounded-2xl overflow-hidden bg-black border border-zinc-800 group-hover:border-red-600 transition-colors flex items-center justify-center shadow-lg shadow-red-600/10">
               <Image 
                 src="/logo.png" 
                 alt="Türkyılmaz Beyaz Eşya Servisi Logo" 
@@ -134,7 +134,7 @@ export default async function Home() {
             <div>
               <div className="flex items-center gap-1 leading-none">
                 <span className="font-black text-white tracking-wider text-lg">TÜRK</span>
-                <span className="font-black text-orange-500 tracking-wider text-lg">YILMAZ</span>
+                <span className="font-black text-red-600 tracking-wider text-lg">YILMAZ</span>
               </div>
               <span className="text-[10px] text-zinc-300 font-bold tracking-widest uppercase block mt-1">
                 Beyaz Eşya Servisi
@@ -145,27 +145,27 @@ export default async function Home() {
           <div className="flex items-center gap-2 sm:gap-4">
             <Link 
               href="/islerimiz" 
-              className="hidden sm:inline-flex text-xs font-bold text-zinc-200 hover:text-orange-400 transition px-2.5 py-1.5"
+              className="hidden sm:inline-flex text-xs font-bold text-zinc-200 hover:text-red-500 transition px-2.5 py-1.5"
             >
               Yapılan İşler
             </Link>
             <Link 
               href="/periyodik-bakim" 
-              className="hidden md:inline-flex items-center gap-1.5 text-xs font-bold text-orange-400 bg-orange-950/50 border border-orange-500/40 hover:bg-orange-500 hover:text-white transition px-3 py-1.5 rounded-xl"
+              className="hidden md:inline-flex items-center gap-1.5 text-xs font-bold text-red-500 bg-red-950/40 border border-red-600/40 hover:bg-red-600 hover:text-white transition px-3 py-1.5 rounded-xl"
             >
               <CalendarClock className="w-3.5 h-3.5" />
               <span>Periyodik Bakım</span>
             </Link>
             <Link 
               href="/iletisim" 
-              className="hidden sm:inline-flex text-xs font-bold text-zinc-200 hover:text-orange-400 transition px-2.5 py-1.5"
+              className="hidden sm:inline-flex text-xs font-bold text-zinc-200 hover:text-red-500 transition px-2.5 py-1.5"
             >
               İletişim
             </Link>
             
             <a
               href={`tel:${cleanPhone}`}
-              className="relative overflow-hidden inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-orange-500/25 transition-all hover:scale-105 active:scale-95"
+              className="relative overflow-hidden inline-flex items-center gap-2 bg-gradient-to-r from-red-600 via-rose-600 to-red-600 hover:from-red-700 hover:to-rose-700 text-white font-black text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-red-600/25 transition-all hover:scale-105 active:scale-95"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/20 transform -skew-x-12 animate-shimmer" />
               <PhoneCall className="w-4 h-4 animate-pulse shrink-0" />
@@ -179,26 +179,26 @@ export default async function Home() {
       <section className="relative overflow-hidden pt-12 pb-16 px-4">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           
-          <div className="inline-flex items-center gap-2 bg-zinc-900 border border-orange-500/40 text-orange-400 text-xs font-extrabold px-4 py-1.5 rounded-full mb-6 shadow-sm">
-            <Radio className="w-3.5 h-3.5 text-orange-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 bg-zinc-900 border border-red-600/40 text-red-500 text-xs font-extrabold px-4 py-1.5 rounded-full mb-6 shadow-sm">
+            <Radio className="w-3.5 h-3.5 text-red-500 animate-pulse" />
             <span>Gebze & Darıca Bölgesinde Aynı Gün Yerinde Servis</span>
           </div>
 
           <h1 className="text-[1.85rem] xs:text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight sm:leading-none">
             Gebze & Darıca <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-300 to-orange-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-rose-400 to-red-600">
               Beyaz Eşya, Klima & Kombi Servisi
             </span>
           </h1>
 
           <p className="mt-5 text-sm sm:text-lg text-zinc-200 max-w-2xl mx-auto leading-relaxed">
-            Arçelik, Beko, Altus, Vestel ve Bosch cihazlarınızda doğru teşhis, orijinal yedek parça ve <strong className="text-orange-400 font-bold underline decoration-orange-500/40 underline-offset-4">6 ay resmi servis garantisi</strong> ile adresinizde tamir.
+            Arçelik, Beko, Altus, Vestel ve Bosch cihazlarınızda doğru teşhis, orijinal yedek parça ve <strong className="text-red-500 font-bold underline decoration-red-600/40 underline-offset-4">6 ay resmi servis garantisi</strong> ile adresinizde tamir.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
             <a
               href={`tel:${cleanPhone}`}
-              className="relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 hover:from-orange-600 hover:to-amber-600 text-white font-black text-base px-8 py-4 rounded-2xl shadow-xl shadow-orange-500/35 transition-all hover:scale-105 active:scale-95 glow-orange-pulse"
+              className="relative overflow-hidden w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-700 hover:to-rose-800 text-white font-black text-base px-8 py-4 rounded-2xl shadow-xl shadow-red-600/35 transition-all hover:scale-105 active:scale-95 glow-red-pulse"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/20 transform -skew-x-12 animate-shimmer" />
               <PhoneCall className="w-5 h-5 animate-bounce" />
@@ -207,9 +207,9 @@ export default async function Home() {
 
             <Link
               href="/periyodik-bakim"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-100 font-bold text-base px-7 py-4 rounded-2xl border border-zinc-800 hover:border-orange-500/60 shadow-lg transition-all hover:scale-105"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-zinc-900 hover:bg-zinc-800 text-zinc-100 font-bold text-base px-7 py-4 rounded-2xl border border-zinc-800 hover:border-red-600/60 shadow-lg transition-all hover:scale-105"
             >
-              <CalendarClock className="w-5 h-5 text-orange-400" />
+              <CalendarClock className="w-5 h-5 text-red-500" />
               <span>Periyodik Bakım Takvimi</span>
             </Link>
           </div>
@@ -218,7 +218,7 @@ export default async function Home() {
           <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto text-left">
             <div className="bg-zinc-900 p-4 rounded-2xl border border-zinc-800 shadow-sm">
               <div className="flex items-center justify-between mb-1.5">
-                <Clock className="w-5 h-5 text-orange-400" />
+                <Clock className="w-5 h-5 text-red-500" />
                 <span className="text-[10px] font-bold text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 px-2 py-0.5 rounded-full">Hızlı</span>
               </div>
               <p className="text-lg font-black text-white tracking-tight">25-45 Dk</p>
@@ -227,8 +227,8 @@ export default async function Home() {
 
             <div className="bg-zinc-900 p-4 rounded-2xl border border-zinc-800 shadow-sm">
               <div className="flex items-center justify-between mb-1.5">
-                <ShieldCheck className="w-5 h-5 text-orange-400" />
-                <span className="text-[10px] font-bold text-orange-400 bg-orange-950/60 border border-orange-500/30 px-2 py-0.5 rounded-full">Resmi</span>
+                <ShieldCheck className="w-5 h-5 text-red-500" />
+                <span className="text-[10px] font-bold text-red-500 bg-red-950/60 border border-red-500/30 px-2 py-0.5 rounded-full">Resmi</span>
               </div>
               <p className="text-lg font-black text-white tracking-tight">6 Ay Garanti</p>
               <p className="text-xs text-zinc-300">Değişen Parçalara</p>
@@ -236,8 +236,8 @@ export default async function Home() {
 
             <div className="bg-zinc-900 p-4 rounded-2xl border border-zinc-800 shadow-sm">
               <div className="flex items-center justify-between mb-1.5">
-                <Wrench className="w-5 h-5 text-orange-400" />
-                <span className="text-[10px] font-bold text-amber-400 bg-amber-950/60 border border-amber-500/30 px-2 py-0.5 rounded-full">%100</span>
+                <Wrench className="w-5 h-5 text-red-500" />
+                <span className="text-[10px] font-bold text-rose-400 bg-rose-950/60 border border-rose-500/30 px-2 py-0.5 rounded-full">%100</span>
               </div>
               <p className="text-lg font-black text-white tracking-tight">Orijinal Parça</p>
               <p className="text-xs text-zinc-300">Fabrika Garantili Ürün</p>
@@ -245,7 +245,7 @@ export default async function Home() {
 
             <div className="bg-zinc-900 p-4 rounded-2xl border border-zinc-800 shadow-sm">
               <div className="flex items-center justify-between mb-1.5">
-                <MapPin className="w-5 h-5 text-orange-400" />
+                <MapPin className="w-5 h-5 text-red-500" />
                 <span className="text-[10px] font-bold text-blue-400 bg-blue-950/60 border border-blue-500/30 px-2 py-0.5 rounded-full">Mobil</span>
               </div>
               <p className="text-lg font-black text-white tracking-tight">Yerinde Onarım</p>
@@ -265,7 +265,7 @@ export default async function Home() {
                 key={i} 
                 className="inline-flex items-center gap-2 bg-zinc-900 border border-zinc-800 text-zinc-200 text-xs font-bold px-4 py-2 rounded-xl transition cursor-default"
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-red-600"></span>
                 <span>{brand} Özel Servisi</span>
               </div>
             ))}
@@ -276,7 +276,7 @@ export default async function Home() {
       {/* 5. HİZMETLERİMİZ */}
       <section className="py-16 px-4 max-w-6xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/60 px-4 py-1.5 rounded-full border border-orange-500/30">
+          <span className="text-xs font-bold text-red-500 tracking-wider uppercase bg-red-950/60 px-4 py-1.5 rounded-full border border-red-600/30">
             Profesyonel Hizmetlerimiz
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white mt-3 tracking-tight">
@@ -291,10 +291,10 @@ export default async function Home() {
           {services.map((item: any) => (
             <div 
               key={item._id} 
-              className="bg-zinc-900 rounded-3xl border border-zinc-800 p-6 flex flex-col justify-between hover:border-orange-500/50 transition-colors"
+              className="bg-zinc-900 rounded-3xl border border-zinc-800 p-6 flex flex-col justify-between hover:border-red-600/50 transition-colors"
             >
               <div>
-                <div className="w-12 h-12 rounded-2xl bg-orange-500/10 border border-orange-500/20 text-orange-400 flex items-center justify-center font-bold mb-5">
+                <div className="w-12 h-12 rounded-2xl bg-red-600/10 border border-red-600/20 text-red-500 flex items-center justify-center font-bold mb-5">
                   <Wrench className="w-5 h-5" />
                 </div>
                 <h3 className="font-bold text-lg text-white leading-snug">{item.title}</h3>
@@ -303,7 +303,7 @@ export default async function Home() {
                   <ul className="mt-4 space-y-2 border-t border-zinc-800 pt-3">
                     {item.features.map((feat: string, fIdx: number) => (
                       <li key={fIdx} className="text-xs text-zinc-200 flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-orange-400 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-red-500 shrink-0" />
                         <span>{feat}</span>
                       </li>
                     ))}
@@ -312,7 +312,7 @@ export default async function Home() {
               </div>
               <a
                 href={`tel:${cleanPhone}`}
-                className="mt-6 inline-flex items-center justify-center gap-1.5 w-full text-xs font-bold text-orange-400 bg-orange-950/30 hover:bg-orange-500 hover:text-white border border-orange-500/30 py-3 rounded-xl transition duration-200"
+                className="mt-6 inline-flex items-center justify-center gap-1.5 w-full text-xs font-bold text-red-500 bg-red-950/30 hover:bg-red-600 hover:text-white border border-red-600/30 py-3 rounded-xl transition duration-200"
               >
                 <span>Hemen Ustaya Danış</span>
                 <ChevronRight className="w-3.5 h-3.5" />
@@ -328,7 +328,7 @@ export default async function Home() {
       {/* 7. BÖLGESEL SEO BLOĞU */}
       <section className="py-12 px-4 max-w-6xl mx-auto">
         <div className="bg-zinc-900 p-6 sm:p-8 rounded-3xl border border-zinc-800 text-xs text-zinc-200 space-y-3 leading-relaxed">
-          <h2 className="text-sm font-bold text-orange-400 uppercase tracking-wider flex items-center gap-2">
+          <h2 className="text-sm font-bold text-red-500 uppercase tracking-wider flex items-center gap-2">
             <Building2 className="w-4 h-4" />
             Gebze & Darıca Beyaz Eşya Servisi, Kombi & Klima Özel Servis Çözümleri
           </h2>
@@ -346,7 +346,7 @@ export default async function Home() {
         <div className="bg-zinc-900 rounded-3xl border border-zinc-800 p-6 sm:p-10 shadow-xl">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/60 px-4 py-1.5 rounded-full border border-orange-500/30">
+              <span className="text-xs font-bold text-red-500 tracking-wider uppercase bg-red-950/60 px-4 py-1.5 rounded-full border border-red-600/30">
                 Mobil Servis Ağı
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-white mt-3 tracking-tight">
@@ -366,21 +366,21 @@ export default async function Home() {
                       key={idx}
                       className="inline-flex items-center gap-1.5 bg-zinc-950 border border-zinc-800 text-zinc-200 text-xs font-medium px-3 py-1.5 rounded-xl"
                     >
-                      <MapPin className="w-3.5 h-3.5 text-orange-400" />
+                      <MapPin className="w-3.5 h-3.5 text-red-500" />
                       {area}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-8 p-4 rounded-2xl bg-orange-950/30 border border-orange-500/30 flex items-center justify-between">
+              <div className="mt-8 p-4 rounded-2xl bg-red-950/30 border border-red-600/30 flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold text-white">Adresinize Servis İsteyin</p>
-                  <p className="text-[11px] text-orange-300">Arayıp aynı gün servis randevusu alın.</p>
+                  <p className="text-[11px] text-red-300">Arayıp aynı gün servis randevusu alın.</p>
                 </div>
                 <a
                   href={`tel:${cleanPhone}`}
-                  className="bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-md"
+                  className="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl transition shadow-md"
                 >
                   Hemen Ara
                 </a>
@@ -405,7 +405,7 @@ export default async function Home() {
       {/* 9. SSS */}
       <section className="py-16 px-4 max-w-4xl mx-auto">
         <div className="text-center mb-10">
-          <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/60 px-4 py-1.5 rounded-full border border-orange-500/30">
+          <span className="text-xs font-bold text-red-500 tracking-wider uppercase bg-red-950/60 px-4 py-1.5 rounded-full border border-red-600/30">
             Aklınıza Takılanlar
           </span>
           <h2 className="text-2xl sm:text-4xl font-black text-white mt-3 tracking-tight">
@@ -423,7 +423,7 @@ export default async function Home() {
               className="bg-zinc-900 p-6 rounded-2xl border border-zinc-800"
             >
               <h3 className="font-bold text-white text-sm sm:text-base flex items-start gap-2.5">
-                <HelpCircle className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
+                <HelpCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
                 <span>{faq.q}</span>
               </h3>
               <p className="text-xs sm:text-sm text-zinc-200 mt-3 pl-7 leading-relaxed">
@@ -436,11 +436,11 @@ export default async function Home() {
 
       {/* 10. ACİL ÇAĞRI BANNERI */}
       <section className="py-12 px-4 max-w-5xl mx-auto">
-        <div className="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden glow-orange-pulse">
+        <div className="bg-gradient-to-r from-red-600 via-rose-600 to-red-700 text-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden glow-red-pulse">
           <h2 className="text-2xl sm:text-4xl font-black tracking-tight">
             Cihazınızda Bir Arıza mı Var?
           </h2>
-          <p className="mt-3 text-orange-100 text-sm sm:text-base max-w-xl mx-auto font-medium">
+          <p className="mt-3 text-red-100 text-sm sm:text-base max-w-xl mx-auto font-medium">
             Gereksiz parça masrafı ödemeden önce bize danışın. Adresinizde yerinde kontrol edip kalıcı çözümü üretelim.
           </p>
           <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -449,7 +449,7 @@ export default async function Home() {
               className="relative overflow-hidden inline-flex items-center gap-2.5 bg-black hover:bg-zinc-900 text-white font-black px-8 py-4 rounded-2xl shadow-2xl transition-all hover:scale-105 border border-white/10"
             >
               <span className="absolute inset-0 w-1/2 h-full bg-white/20 transform -skew-x-12 animate-shimmer" />
-              <PhoneCall className="w-5 h-5 text-orange-400" />
+              <PhoneCall className="w-5 h-5 text-red-500" />
               <span>{phone} Nolu Hattı Ara</span>
             </a>
           </div>
@@ -466,7 +466,7 @@ export default async function Home() {
               </div>
               <div>
                 <p className="font-extrabold text-white text-base">TÜRKYILMAZ BEYAZ EŞYA SERVİSİ</p>
-                <p className="text-xs text-orange-400 font-semibold">Gebze & Darıca Bölge Özel Servisi</p>
+                <p className="text-xs text-red-500 font-semibold">Gebze & Darıca Bölge Özel Servisi</p>
               </div>
             </div>
             <p className="text-zinc-300 text-xs leading-relaxed max-w-md">
@@ -477,10 +477,10 @@ export default async function Home() {
           <div>
             <p className="font-bold text-white text-sm uppercase tracking-wider mb-3">Sayfalar</p>
             <ul className="space-y-2 text-zinc-300">
-              <li><Link href="/" className="hover:text-orange-400 transition">Ana Sayfa</Link></li>
-              <li><Link href="/islerimiz" className="hover:text-orange-400 transition">Yapılan Sahadan İşler</Link></li>
-              <li><Link href="/periyodik-bakim" className="hover:text-orange-400 transition">Periyodik Bakım Kaydı</Link></li>
-              <li><Link href="/iletisim" className="hover:text-orange-400 transition">İletişim & Dükkan Konumu</Link></li>
+              <li><Link href="/" className="hover:text-red-500 transition">Ana Sayfa</Link></li>
+              <li><Link href="/islerimiz" className="hover:text-red-500 transition">Yapılan Sahadan İşler</Link></li>
+              <li><Link href="/periyodik-bakim" className="hover:text-red-500 transition">Periyodik Bakım Kaydı</Link></li>
+              <li><Link href="/iletisim" className="hover:text-red-500 transition">İletişim & Dükkan Konumu</Link></li>
             </ul>
           </div>
 
@@ -488,15 +488,15 @@ export default async function Home() {
             <p className="font-bold text-white text-sm uppercase tracking-wider mb-3">İletişim & Adres</p>
             <div className="space-y-2.5 text-zinc-300">
               <p className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                 <span>{shopAddress}</span>
               </p>
               <p className="flex items-center gap-2">
-                <PhoneCall className="w-4 h-4 text-orange-400 shrink-0" />
-                <a href={`tel:${cleanPhone}`} className="text-white font-bold hover:text-orange-400 transition">{phone}</a>
+                <PhoneCall className="w-4 h-4 text-red-500 shrink-0" />
+                <a href={`tel:${cleanPhone}`} className="text-white font-bold hover:text-red-500 transition">{phone}</a>
               </p>
               <p className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-orange-400 shrink-0" />
+                <Clock className="w-4 h-4 text-red-500 shrink-0" />
                 <span>08:30 - 20:30 (Pazar Nöbetçi)</span>
               </p>
             </div>
@@ -510,11 +510,11 @@ export default async function Home() {
             href="https://affan-portfolio-gilt.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-orange-500/50 px-3.5 py-1.5 rounded-full transition-colors shadow-sm"
+            className="group inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 hover:border-red-600/50 px-3.5 py-1.5 rounded-full transition-colors shadow-sm"
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-orange-500 group-hover:animate-ping" />
+            <span className="w-1.5 h-1.5 rounded-full bg-red-600 group-hover:animate-ping" />
             <span className="text-zinc-300 group-hover:text-zinc-100 transition">Tasarım & Yazılım:</span>
-            <span className="font-bold text-orange-400 group-hover:text-orange-300 transition">
+            <span className="font-bold text-red-500 group-hover:text-red-400 transition">
               CCN Teknoloji
             </span>
           </a>
