@@ -118,6 +118,12 @@ export default async function Home() {
             >
               İletişim
             </Link>
+            <Link 
+  href="/periyodik-bakim" 
+  className="hidden sm:inline-flex text-xs font-bold text-slate-600 hover:text-blue-600 transition px-3 py-2"
+>
+  Periyodik Bakım
+</Link>
             <a
               href={`https://wa.me/${waPhone}?text=Merhaba,%20teknik%20servis%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
               target="_blank"
