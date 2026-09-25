@@ -21,7 +21,7 @@ const cases: CaseStudy[] = [
     category: 'Buzdolabı Onarımı',
     description: 'Cihaz soğutmuyor şikayetiyle gidilen adreste, daha önce motor arızalı denilerek yüksek maliyet çıkarılmış olan cihaz incelendi.',
     solution: 'Yapılan detaylı testlerde motorun sağlam olduğu, sensörde oksitlenme ve kablo kopukluğu tespit edildi. Orijinal sensör değişimi ve kablo revizyonuyla cihaz ilk günkü soğutma performansına döndürüldü.',
-    image: '/galeri/b1.jpg', // dosya uzantın png ise .png yapabilirsin
+    image: '/galeri/b1.jpeg', // .jpeg yapıldı
     badge: 'Gereksiz Motor Masrafından Kurtarıldı'
   },
   {
@@ -30,7 +30,7 @@ const cases: CaseStudy[] = [
     category: 'Kurutma Makinesi Servisi',
     description: 'Tamburu dönmeyen ve yüksek sürtünme sesi çıkaran kurutma makinesinin arıza tespiti yerinde yapıldı.',
     solution: 'Fabrika standartlarında %100 orijinal yedek motor montajı yapıldı, hava kanalları liflerden arındırıldı ve 6 ay resmi garanti ile teslim edildi.',
-    image: '/galeri/k1.jpg',
+    image: '/galeri/k1.jpeg', // .jpeg yapıldı
     badge: 'Orijinal Motor & 6 Ay Garanti'
   },
   {
@@ -39,7 +39,7 @@ const cases: CaseStudy[] = [
     category: 'Ankastre & Ocak Servisi',
     description: 'Aşırı yüklenme ve darbe kaynaklı camı patlayan ankastre cam ocağın yenileme çalışması.',
     solution: 'Güvenlik kontrolleri sağlandıktan sonra fabrika çıkışlı orijinal darbeye ve yüksek ısıya dayanıklı temperli cam montajı tamamlandı.',
-    image: '/galeri/o1.jpg',
+    image: '/galeri/o1.jpeg', // .jpeg yapıldı
     badge: 'Orijinal Cam Değişimi'
   }
 ]
