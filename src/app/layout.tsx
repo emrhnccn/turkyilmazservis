@@ -7,28 +7,33 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://turkyilmazservis.vercel.app'),
   title: {
-    default: 'Darıca Beyaz Eşya Tamircisi | Arçelik, Beko, Bosch Teknik Servis',
+    default: 'Gebze & Darıca Beyaz Eşya Servisi | Arçelik Beko Kombi Tamiri',
     template: '%s | Türkyılmaz Beyaz Eşya Servisi'
   },
-  description: 'Darıca ve Kocaeli geneli Arçelik, Beko, Altus, Bosch buzdolabı, çamaşır ve bulaşık makinesi tamiri. 6 ay garantili yerinde servis: 0552 116 41 28.',
+  description: 'Gebze, Darıca ve Çayırova geneli Arçelik, Beko, Bosch beyaz eşya tamiri, kombi ve klima bakımı. 6 ay garantili yerinde servis: 0552 116 41 28.',
   keywords: [
+    'gebze beyaz eşya servisi',
+    'gebze beyaz eşya tamiri',
     'darıca beyaz eşya tamircisi',
     'darıca arçelik servis',
+    'gebze arçelik servisi',
+    'beko servis darıca',
+    'gebze beko servisi',
     'arçelik buzdolabı tamiri',
     'arçelik klima servisi darıca',
-    'beko servis darıca',
-    'altus servis darıca',
-    'grundig servis darıca',
-    'gebze beyaz eşya servisi',
-    'bulaşık makinesi tamiri darıca',
+    'gebze klima servisi',
+    'gebze kombi servisi',
     'çamaşır makinesi kazan değişimi',
-    'türkyılmaz servis'
+    'bulaşık makinesi tamiri darıca'
   ],
-  authors: [{ name: 'Türkyılmaz Teknik Servis' }, { name: 'CCN Teknoloji', url: 'https://affan-portfolio-gilt.vercel.app/' }],
+  authors: [{ name: 'Türkyılmaz Beyaz Eşya Servisi' }, { name: 'CCN Teknoloji', url: 'https://affan-portfolio-gilt.vercel.app/' }],
   creator: 'CCN Teknoloji',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'Türkyılmaz Beyaz Eşya Servisi - Darıca & Kocaeli',
-    description: 'Arçelik, Beko, Altus ve tüm markalarda aynı gün yerinde arıza tespiti ve 6 ay garantili parça değişimi.',
+    title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze & Darıca',
+    description: 'Arçelik, Beko, Bosch ve tüm markalarda aynı gün yerinde arıza tespiti ve 6 ay parça garantisi.',
     url: 'https://turkyilmazservis.vercel.app',
     siteName: 'Türkyılmaz Beyaz Eşya Servisi',
     images: [
@@ -41,6 +46,12 @@ export const metadata: Metadata = {
     ],
     locale: 'tr_TR',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze & Darıca',
+    description: 'Aynı gün yerinde garantili beyaz eşya, klima ve kombi tamir servisi.',
+    images: ['/logo.png'],
   },
   robots: {
     index: true,
@@ -60,14 +71,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Google Arama Motoruna Dükkanın Bilgilerini Doğrudan Tanıtan JSON-LD Yapısı
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': 'ApplianceRepair',
+    '@id': 'https://turkyilmazservis.vercel.app/#business',
     name: 'Türkyılmaz Beyaz Eşya Servisi',
-    image: 'https://turkyilmazservis.vercel.app/logo.png',
-    '@id': 'https://turkyilmazservis.vercel.app',
+    alternateName: 'Türkyılmaz Teknik Servis',
     url: 'https://turkyilmazservis.vercel.app',
+    logo: 'https://turkyilmazservis.vercel.app/logo.png',
+    image: 'https://turkyilmazservis.vercel.app/logo.png',
     telephone: '+905521164128',
     priceRange: '₺₺',
     address: {
@@ -80,7 +92,7 @@ export default function RootLayout({
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 40.7731, // Darıca koordinatları
+      latitude: 40.7731,
       longitude: 29.4055
     },
     openingHoursSpecification: [
@@ -99,28 +111,46 @@ export default function RootLayout({
       }
     ],
     areaServed: [
-      { '@type': 'AdministrativeArea', name: 'Darıca' },
-      { '@type': 'AdministrativeArea', name: 'Gebze' },
-      { '@type': 'AdministrativeArea', name: 'Çayırova' },
-      { '@type': 'AdministrativeArea', name: 'Dilovası' },
+      { '@type': 'City', name: 'Gebze' },
+      { '@type': 'City', name: 'Darıca' },
+      { '@type': 'City', name: 'Çayırova' },
+      { '@type': 'City', name: 'Dilovası' },
       { '@type': 'AdministrativeArea', name: 'Kocaeli' }
     ],
-    makesOffer: [
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Arçelik Beko Buzdolabı & Çamaşır Makinesi Tamiri'
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Beyaz Eşya, Kombi ve Klima Tamir Hizmetleri',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Arçelik Beko Buzdolabı & Çamaşır Makinesi Tamiri'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Bulaşık Makinesi Rezistans ve Pompa Onarımı'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Klima Bakımı, Gaz Dolumu ve Tamiri'
+          }
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Kombi Periyodik Bakımı ve Petek Temizliği'
+          }
         }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Service',
-          name: 'Kombi ve Klima Periyodik Bakım Servisi'
-        }
-      }
-    ]
+      ]
+    }
   }
 
   return (

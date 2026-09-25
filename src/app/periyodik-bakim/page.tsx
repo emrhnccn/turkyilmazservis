@@ -97,6 +97,7 @@ export default function MaintenancePage() {
           <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
             Cihazınızın Bakım Zamanını Takip Edelim
           </h1>
+          <meta name="description" content="Kombi için 6 ayda bir, beyaz eşyalarınız için yılda bir periyodik bakım takvimi oluşturun. Gebze ve Darıca bölgesi garantili servis." />
           <p className="text-zinc-400 mt-3 text-sm sm:text-base">
             Kombiniz için 6 ayda bir, beyaz eşyalarınız için yılda bir periyodik bakım kaydı oluşturun; günü geldiğinde ustamız hatırlatsın.
           </p>

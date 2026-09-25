@@ -104,26 +104,38 @@ export const DEFAULT_CASES: CaseItemType[] = [
 export const DEFAULT_SERVICES = [
   {
     _id: 's-1',
-    title: 'Buzdolabı Servisi',
-    description: 'Soğutmama, motor arızası, gaz kaçağı ve buzlanma problemlerine yerinde garantili çözüm.',
-    features: ['Gaz Kaçağı Tespiti', 'Motor & Kompresör Değişimi', 'Sensör & Termostat Tamiri']
+    title: 'Buzdolabı Tamir Servisi',
+    description: 'Soğutmama, motor kilitlenmesi, gaz kaçağı ve karlanma problemlerine yerinde 6 ay garantili çözüm.',
+    features: ['Gaz Kaçağı & Şarjı', 'Motor (Kompresör) Değişimi', 'Sensör & Termostat Onarımı']
   },
   {
     _id: 's-2',
     title: 'Çamaşır Makinesi Tamiri',
-    description: 'Su akıtma, sıkmama, gürültülü çalışma ve kazan dönmeme arızalarına orijinal yedek parça garantisi.',
-    features: ['Kazan Rulman Değişimi', 'Pompa & Kilit Onarımı', 'Elektronik Kart Revizyonu']
+    description: 'Aşırı gürültülü sıkma, su kaçırma ve kazan dönmeme arızalarında orijinal presli kazan değişimi.',
+    features: ['Orijinal Kazan & Rulman Değişimi', 'Tahliye Motoru & Kilit Onarımı', 'Amortisör Yenileme']
   },
   {
     _id: 's-3',
     title: 'Bulaşık Makinesi Servisi',
-    description: 'İyi yıkamama, su boşaltmama ve kart arızaları aynı gün servis desteği ile giderilir.',
-    features: ['Fıskiye & Motor Bakımı', 'Ventil & Ventil Hortumu Değişimi', 'Tahliye Pompası Onarımı']
+    description: 'Suyu ısıtmama, tableti eritmeme ve kirli yıkama arızalarına aynı gün yerinde müdahale.',
+    features: ['Sirkülasyon Isıtıcı (Rezistans)', 'Ventil & Su Giriş Hortumu', 'Yıkama Motoru Revizyonu']
   },
   {
     _id: 's-4',
-    title: 'Kurutma Makinesi & Fırın',
-    description: 'Kurutmayan cihazlar, rezistans arızaları ve cam patlamalarında fabrika standartlarında onarım.',
-    features: ['Orijinal Rezistans', 'Filtre & Kanal Temizliği', 'Isı Termiği Değişimi']
+    title: 'Klima Bakımı & Gaz Dolumu',
+    description: 'Arçelik, Beko ve tüm marka klimalarda gaz kaçağı tespiti, R410/R32 gaz şarjı ve antibakteriyel filtre bakımı.',
+    features: ['Klima Gaz Dolumu & Basınç Testi', 'İç & Dış Ünite İlaçlı Yıkama', 'Kompresör & Kart Tamiri']
+  },
+  {
+    _id: 's-5',
+    title: 'Kombi Bakımı & Petek Temizliği',
+    description: 'Peteklerin altının ısınmaması, bar düşmesi ve ateşleme problemlerine profesyonel periyodik bakım desteği.',
+    features: ['Makineli İlaçlı Petek Temizliği', 'Genleşme Tankı & Eşanjör Bakımı', 'Sıcak Su NTC Sensör Onarımı']
+  },
+  {
+    _id: 's-6',
+    title: 'Kurutma Makinesi & Ankastre',
+    description: 'Geç kurutma, filtre tıkanıklığı, motor yanması ve cam ocak patlamalarında fabrika standartlarında onarım.',
+    features: ['Sıfır Tahrik Motoru Değişimi', 'Kondenser & Drenaj Pompası', 'Orijinal Isıya Dayanıklı Cam']
   }
 ]

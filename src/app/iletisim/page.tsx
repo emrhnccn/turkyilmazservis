@@ -17,6 +17,15 @@ import {
 } from 'lucide-react'
 
 export const revalidate = 60
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'İletişim & Darıca Atölye Konumu | Türkyılmaz Servis',
+  description: 'Darıca Fevziçakmak Mahallesi atölye adresimiz, Google Haritalar yol tarifi ve 7/24 kesintisiz teknik servis hattımız: 0552 116 41 28.',
+  alternates: {
+    canonical: '/iletisim',
+  },
+}
 
 async function getSettings() {
   try {

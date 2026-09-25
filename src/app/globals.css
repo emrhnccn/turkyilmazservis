@@ -65,6 +65,9 @@ body {
   display: flex;
   width: max-content;
   animation: marquee 28s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .animate-marquee:hover {

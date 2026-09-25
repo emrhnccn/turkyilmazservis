@@ -6,6 +6,15 @@ import { DEFAULT_CASES } from '../../lib/constants'
 import { Wrench, CheckCircle2, ArrowLeft, PhoneCall } from 'lucide-react'
 
 export const revalidate = 10
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Yapılan Tamir ve Bakım İşleri | Gerçek Sahadan Örnekler',
+  description: 'Darıca ve Gebze genelinde gerçekleştirdiğimiz garantili çamaşır makinesi kazan değişimi, bulaşık rezistans ve kurutma makinesi tamir hikayeleri.',
+  alternates: {
+    canonical: '/islerimiz',
+  },
+}
 
 async function getCaseStudies() {
   try {
