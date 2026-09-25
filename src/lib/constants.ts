@@ -25,7 +25,7 @@ export const DEFAULT_CASES: CaseItemType[] = [
     badge: 'Orijinal Rezistans Değişimi',
     description: 'Bulaşıkların soğuk suyla yıkandığı, yağların çözülmediği ve program sonunda kurutma yapmadığı şikayeti incelendi.',
     solution: 'Alt karter sökülerek arızalanan sirkülasyon ısıtıcı tüpü (rezistans) ve sensör grubu orijinal Vestel parça ile değiştirildi.',
-    image: '/galeri/vestel.bulasıkmakinesi_rezisdansdegisimi.jpg',
+    image: '/galeri/bulasik-rezistans.jpeg',
   },
   {
     _id: 'case-3',
