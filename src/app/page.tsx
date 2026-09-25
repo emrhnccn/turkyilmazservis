@@ -433,6 +433,21 @@ export default async function Home() {
         </div>
       </section>
 
+      {/* SEO ODAKLI BÖLGESEL BİLGİLENDİRME BLOĞU */}
+      <section className="py-12 px-4 max-w-5xl mx-auto border-t border-zinc-900">
+        <div className="bg-zinc-900/50 p-6 sm:p-8 rounded-3xl border border-zinc-800 text-xs text-zinc-400 space-y-4 leading-relaxed">
+          <h2 className="text-sm font-bold text-white uppercase tracking-wider text-orange-400">
+            Darıca Beyaz Eşya Tamircisi & Kocaeli Bölge Özel Servisi
+          </h2>
+          <p>
+            Türkyılmaz Teknik Servis olarak; <strong>Darıca</strong>, <strong>Gebze</strong>, <strong>Çayırova</strong> ve tüm Kocaeli ilçelerinde başta <strong>Arçelik</strong>, <strong>Beko</strong>, <strong>Altus</strong>, <strong>Grundig</strong>, <strong>Bosch</strong> ve <strong>Siemens</strong> olmak üzere lider markaların <em>buzdolabı motor tamiri</em>, <em>çamaşır makinesi kazan rulman değişimi</em>, <em>bulaşık makinesi rezistans ve pompa onarımı</em> ile <em>klima / kombi periyodik bakımı</em> alanında garantili hizmet sunmaktayız.
+          </p>
+          <p>
+            Darıca Fevziçakmak Mahallesi merkezli atölyemizden hareket eden mobil ekiplerimiz; Arçelik yetkili servis ve Beko yetkili servis standartlarında, orijinal yedek parça kullanarak adresinizde işlem yapmaktadır. Değiştirilen her parçaya 6 ay servis garantisi verilmektedir.
+          </p>
+        </div>
+      </section>
+
       {/* 9. ACİL ÇAĞRI BANNERI (YANGIN TURUNCUSU PARILTI) */}
       <section className="py-12 px-4 max-w-5xl mx-auto">
         <div className="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white rounded-3xl p-8 sm:p-12 text-center shadow-2xl relative overflow-hidden glow-orange-pulse">
