@@ -2,7 +2,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+// Font optimizasyonu: render-blocking süresini keser ve LCP'yi öne çeker
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  preload: true,
+  weight: ['400', '600', '800', '900'],
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://turkyilmazservis.vercel.app'),

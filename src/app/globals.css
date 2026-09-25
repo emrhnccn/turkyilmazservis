@@ -26,39 +26,46 @@ body {
 }
 /* --- TÜRKYILMAZ SERVİS ULTRA-MODERN GLOW & SHIMMER EFEKTLERİ --- */
 
+/* --- GPU DESTEKLİ, REPAINT YAPMAYAN MODERN ANİMASYONLAR --- */
+
 @keyframes shimmer {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-100%) translateZ(0);
   }
   100% {
-    transform: translateX(200%);
+    transform: translateX(200%) translateZ(0);
   }
 }
 
-@keyframes pulseGlow {
+/* box-shadow yerine sadece opacity ve transform kullanan composited animasyon */
+@keyframes pulseGlowGpu {
   0%, 100% {
-    box-shadow: 0 0 15px rgba(249, 115, 22, 0.35), 0 0 35px rgba(249, 115, 22, 0.15);
+    transform: scale(1) translateZ(0);
+    opacity: 0.85;
   }
   50% {
-    box-shadow: 0 0 25px rgba(249, 115, 22, 0.65), 0 0 60px rgba(249, 115, 22, 0.3);
+    transform: scale(1.02) translateZ(0);
+    opacity: 1;
   }
 }
 
 @keyframes marquee {
   0% {
-    transform: translateX(0%);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 
 .animate-shimmer {
   animation: shimmer 3s infinite ease-in-out;
+  will-change: transform;
 }
 
 .glow-orange-pulse {
-  animation: pulseGlow 2.5s infinite;
+  animation: pulseGlowGpu 2.5s infinite ease-in-out;
+  will-change: transform, opacity;
 }
 
 .animate-marquee {
@@ -66,7 +73,6 @@ body {
   width: max-content;
   animation: marquee 28s linear infinite;
   will-change: transform;
-  transform: translateZ(0);
   backface-visibility: hidden;
 }
 
@@ -74,10 +80,10 @@ body {
   animation-play-state: paused;
 }
 
-/* Arka plan akıcı grid dokusu */
+/* Hafifletilmiş, render-blocking olmayan grid dokusu */
 .tech-grid-bg {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 32px 32px;
 }
