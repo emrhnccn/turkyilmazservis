@@ -3,24 +3,28 @@ import { createClient } from 'next-sanity'
 
 export async function POST(req: Request) {
   try {
-    const token = process.env.SANITY_API_WRITE_TOKEN
+    let rawToken = process.env.SANITY_API_WRITE_TOKEN
 
-    // Token tanımlı değilse doğrudan net hata döndür
-    if (!token) {
-      console.error('HATA: SANITY_API_WRITE_TOKEN ortam değişkeni bulunamadı!')
+    if (!rawToken) {
       return NextResponse.json(
-        { error: 'Sunucu yapılandırma hatası: Yazma yetkisi (SANITY_API_WRITE_TOKEN) tanımlanmamış.' },
+        { error: 'Sunucu yapılandırma hatası: SANITY_API_WRITE_TOKEN tanımlı değil.' },
         { status: 500 }
       )
     }
 
-    // İstek anında taze yetkili istemci oluşturuyoruz
+    // Kazara girilen değişken adı, tırnak ve satır sonu boşluklarını temizle
+    let cleanToken = rawToken.trim()
+    if (cleanToken.includes('=')) {
+      cleanToken = cleanToken.split('=').pop() || cleanToken
+    }
+    cleanToken = cleanToken.replace(/["'\r\n]/g, '').trim()
+
     const writeClient = createClient({
       projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '6132ks2e',
       dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
       apiVersion: '2024-01-01',
       useCdn: false,
-      token: token,
+      token: cleanToken,
     })
 
     const body = await req.json()
@@ -28,7 +32,7 @@ export async function POST(req: Request) {
 
     if (!fullName || !phone || !deviceType) {
       return NextResponse.json(
-        { error: 'Ad Soyad, Telefon ve Cihaz Türü alanları zorunludur.' },
+        { error: 'Ad Soyad, Telefon ve Cihaz Türü zorunludur.' },
         { status: 400 }
       )
     }
@@ -37,7 +41,7 @@ export async function POST(req: Request) {
     const today = new Date()
     const lastServiceDate = today.toISOString().split('T')[0]
 
-    // Cihaza göre periyot hesaplama
+    // Cihaza göre periyot hesaplama (kombi/klima: 6 ay, diğerleri: 1 yıl)
     const nextDate = new Date(today)
     if (deviceType === 'kombi' || deviceType === 'klima') {
       nextDate.setMonth(nextDate.getMonth() + 6)
@@ -46,7 +50,7 @@ export async function POST(req: Request) {
     }
     const nextServiceDate = nextDate.toISOString().split('T')[0]
 
-    // Sanity veritabanına yeni doküman ekleme
+    // Sanity'ye doküman oluşturma
     const doc = await writeClient.create({
       _type: 'maintenance',
       fullName,
@@ -65,9 +69,9 @@ export async function POST(req: Request) {
       nextServiceDate,
     })
   } catch (error: any) {
-    console.error('Sanity Yazma Hatası:', error)
+    console.error('Bakım Kaydı Hatası:', error)
     return NextResponse.json(
-      { error: error?.message || 'Kayıt Sanity sistemine eklenirken bir hata oluştu.' },
+      { error: error?.message || 'Kayıt eklenirken bir hata oluştu.' },
       { status: 500 }
     )
   }
