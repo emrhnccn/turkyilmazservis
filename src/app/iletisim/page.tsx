@@ -20,14 +20,14 @@ async function getSettings() {
     const settings = await client.fetch(`*[_type == "siteSettings"][0]`)
     return settings || {
       phone: '0552 116 41 28',
-      siteName: 'Türkyılmaz Teknik Servis',
+      siteName: 'Türkyılmaz Beyaz Eşya Servisi',
       address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
       serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
     }
   } catch {
     return {
       phone: '0552 116 41 28',
-      siteName: 'Türkyılmaz Teknik Servis',
+      siteName: 'Türkyılmaz Beyaz Eşya Servisi',
       address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
       serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
     }
@@ -41,26 +41,25 @@ export default async function ContactPage() {
   const shopAddress = settings?.address || 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli'
   const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük']
 
-  // Google Haritalar Yol Tarifi ve Doğrudan Konum Linki
   const encodedAddress = encodeURIComponent(shopAddress)
   const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=16&ie=UTF8&iwloc=&output=embed`
   const googleMapsDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-800 py-10 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-zinc-950 text-slate-100 py-10 px-4 sm:px-6 lg:px-8 selection:bg-orange-500 selection:text-white">
       <div className="max-w-6xl mx-auto">
         
         {/* Üst Bar */}
-        <div className="flex items-center justify-between pb-6 mb-8 border-b border-slate-200">
+        <div className="flex items-center justify-between pb-6 mb-8 border-b border-zinc-800">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-blue-600 transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-zinc-400 hover:text-orange-400 transition"
           >
             <ArrowLeft className="w-4 h-4" /> Ana Sayfaya Dön
           </Link>
           <a
             href={`tel:${cleanPhone}`}
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-md transition"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow-lg shadow-orange-500/20 transition-all hover:scale-105 active:scale-95"
           >
             <PhoneCall className="w-4 h-4 animate-pulse" />
             <span>{phone}</span>
@@ -69,13 +68,13 @@ export default async function ContactPage() {
 
         {/* Sayfa Başlığı */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+          <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/50 px-3.5 py-1.5 rounded-full border border-orange-500/30">
             Hemen Ulaşın
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-slate-900 mt-4 tracking-tight">
+          <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
             İletişim & Dükkan Konumumuz
           </h1>
-          <p className="text-slate-600 mt-3 text-sm sm:text-base">
+          <p className="text-zinc-400 mt-3 text-sm sm:text-base">
             Darıca atölyemize uğrayabilir veya tüm Kocaeli genelinde kapınıza mobil teknik servis çağırabilirsiniz.
           </p>
         </div>
@@ -86,22 +85,22 @@ export default async function ContactPage() {
           {/* Sol Kolon: Sabit WhatsApp Formu & Hızlı Arama */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <h2 className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-2">
-                <CalendarCheck className="w-4 h-4 text-emerald-600" />
+              <h2 className="text-sm font-bold text-zinc-300 uppercase tracking-wider mb-2 flex items-center gap-2">
+                <CalendarCheck className="w-4 h-4 text-orange-400" />
                 Hızlı WhatsApp Randevu Formu
               </h2>
               {/* Sayfada sabit açık duran şablon kartı */}
               <WhatsappWidget phone={phone} isStatic={true} />
             </div>
 
-            <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-6 rounded-3xl shadow-lg">
-              <h3 className="font-bold text-lg mb-1">Acil Servis Çağrısı</h3>
-              <p className="text-blue-100 text-xs mb-4">Beklemeden ustamızla doğrudan görüşün:</p>
+            <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-3xl shadow-xl">
+              <h3 className="font-bold text-lg text-white mb-1">Acil Servis Çağrısı</h3>
+              <p className="text-zinc-400 text-xs mb-4">Beklemeden ustamızla doğrudan görüşün:</p>
               <a
                 href={`tel:${cleanPhone}`}
-                className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-black text-base w-full py-3.5 rounded-2xl shadow transition"
+                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 text-white font-black text-base w-full py-3.5 rounded-2xl shadow-lg shadow-orange-500/25 transition hover:scale-[1.01]"
               >
-                <PhoneCall className="w-5 h-5 text-blue-600" />
+                <PhoneCall className="w-5 h-5" />
                 <span>{phone}</span>
               </a>
             </div>
@@ -111,26 +110,26 @@ export default async function ContactPage() {
           <div className="lg:col-span-7 space-y-6">
             
             {/* DÜKKAN KONUM HARİTASI */}
-            <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm">
-              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-100 border border-slate-100">
+            <div className="bg-zinc-900 p-4 rounded-3xl border border-zinc-800 shadow-xl">
+              <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-black border border-zinc-800">
                 <iframe
                   title="Türkyılmaz Teknik Servis Darıca Dükkan Konumu"
                   src={mapEmbedUrl}
                   width="100%"
                   height="100%"
-                  style={{ border: 0 }}
+                  style={{ border: 0, filter: 'contrast(1.1) brightness(0.95)' }}
                   allowFullScreen={false}
                   loading="lazy"
                 />
               </div>
 
               {/* Dükkan Açık Adresi ve Yol Tarifi Butonu */}
-              <div className="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="mt-4 p-4 rounded-2xl bg-zinc-950 border border-zinc-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
                   <div>
-                    <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Atölye / Dükkan Adresi</h4>
-                    <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
+                    <h4 className="text-xs font-bold text-white uppercase tracking-wider">Atölye / Dükkan Adresi</h4>
+                    <p className="text-xs text-zinc-400 mt-0.5 leading-relaxed">
                       {shopAddress}
                     </p>
                   </div>
@@ -139,7 +138,7 @@ export default async function ContactPage() {
                   href={googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition shrink-0"
+                  className="inline-flex items-center justify-center gap-1.5 bg-zinc-800 hover:bg-orange-500 hover:text-white text-zinc-200 border border-zinc-700 font-bold text-xs px-4 py-2.5 rounded-xl shadow-xs transition shrink-0"
                 >
                   <Navigation className="w-3.5 h-3.5" />
                   <span>Yol Tarifi Al</span>
@@ -149,37 +148,37 @@ export default async function ContactPage() {
 
             {/* Çalışma Saatleri & Garanti Kartları */}
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-                <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
+              <div className="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 shadow-sm">
+                <div className="w-9 h-9 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center mb-3">
                   <Clock className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">Hizmet Saatleri</h4>
-                <p className="text-xs text-slate-500 mt-1">Pazartesi - Cumartesi: 08:30 - 20:30</p>
-                <p className="text-xs text-slate-500">Pazar: Acil Nöbetçi Servis</p>
+                <h4 className="font-bold text-white text-sm">Hizmet Saatleri</h4>
+                <p className="text-xs text-zinc-400 mt-1">Pazartesi - Cumartesi: 08:30 - 20:30</p>
+                <p className="text-xs text-zinc-400">Pazar: Acil Nöbetçi Servis</p>
               </div>
 
-              <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
-                <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
+              <div className="bg-zinc-900 p-5 rounded-2xl border border-zinc-800 shadow-sm">
+                <div className="w-9 h-9 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center mb-3">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">Parça Garantisi</h4>
-                <p className="text-xs text-slate-500 mt-1">Tüm orijinal parça değişimlerinde 6 ay resmi garanti belgesi verilir.</p>
+                <h4 className="font-bold text-white text-sm">Parça Garantisi</h4>
+                <p className="text-xs text-zinc-400 mt-1">Tüm orijinal parça değişimlerinde 6 ay resmi garanti belgesi verilir.</p>
               </div>
             </div>
 
             {/* Mobil Hizmet Verilen İlçeler */}
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
-              <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-3">
-                <MapPin className="w-4 h-4 text-blue-600" />
+            <div className="bg-zinc-900 p-6 rounded-2xl border border-zinc-800 shadow-sm">
+              <h4 className="font-bold text-white text-sm flex items-center gap-2 mb-3">
+                <MapPin className="w-4 h-4 text-orange-400" />
                 Gezici Araçla Hizmet Verdiğimiz İlçeler
               </h4>
               <div className="flex flex-wrap gap-2">
                 {serviceAreas.map((area: string, idx: number) => (
                   <span
                     key={idx}
-                    className="inline-flex items-center gap-1 bg-slate-50 border border-slate-200 text-slate-700 text-xs font-medium px-3 py-1.5 rounded-xl"
+                    className="inline-flex items-center gap-1 bg-zinc-950 border border-zinc-800 text-zinc-300 text-xs font-medium px-3 py-1.5 rounded-xl"
                   >
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
+                    <CheckCircle2 className="w-3.5 h-3.5 text-orange-400" />
                     {area}
                   </span>
                 ))}
