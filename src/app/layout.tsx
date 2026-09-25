@@ -12,26 +12,28 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL('https://turkyilmazservis.vercel.app'),
   title: {
-    default: 'Gebze & Darıca Beyaz Eşya Servisi | Arçelik Beko Kombi Tamiri',
+    default: 'Gebze, Darıca & Çayırova Beyaz Eşya Servisi | Arçelik Beko Vestel',
     template: '%s | Türkyılmaz Beyaz Eşya Servisi'
   },
-  description: 'Gebze, Darıca ve Çayırova geneli Arçelik, Beko, Altus, Vestel beyaz eşya tamiri, kombi ve klima bakımı. 6 ay garantili yerinde servis: 0552 116 41 28.',
+  description: 'Gebze, Darıca ve Çayırova geneli Arçelik, Beko, Samsung, Grundig, Altus, Vestel, Regal, Keysmart, Flavel, Finlux, SEG, Kumtel ve Eminçelik beyaz eşya tamiri. 6 ay garantili yerinde servis: 0552 116 41 28.',
   keywords: [
     'gebze beyaz eşya servisi',
-    'gebze beyaz eşya tamiri',
-    'darıca beyaz eşya tamircisi',
-    'darıca arçelik servis',
+    'darıca beyaz eşya servisi',
+    'çayırova beyaz eşya servisi',
     'gebze arçelik servisi',
-    'beko servis darıca',
-    'gebze beko servisi',
+    'darıca beko servisi',
+    'gebze samsung servisi',
+    'vestel servisi gebze',
     'altus servis darıca',
     'grundig servis darıca',
-    'arçelik buzdolabı tamiri',
-    'arçelik klima servisi darıca',
-    'gebze klima servisi',
-    'gebze kombi servisi',
+    'regal beyaz eşya tamiri',
+    'keysmart servisi gebze',
+    'flavel beyaz eşya servisi',
+    'seg servis gebze',
+    'kumtel ocak tamiri',
+    'eminçelik ankastre servisi',
     'çamaşır makinesi kazan değişimi',
-    'bulaşık makinesi tamiri darıca'
+    'bulaşık makinesi tamiri gebze'
   ],
   authors: [{ name: 'Türkyılmaz Beyaz Eşya Servisi' }, { name: 'CCN Teknoloji', url: 'https://affan-portfolio-gilt.vercel.app/' }],
   creator: 'CCN Teknoloji',
@@ -39,8 +41,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze & Darıca',
-    description: 'Arçelik, Beko, Altus, Vestel ve tüm lider markalarda aynı gün yerinde arıza tespiti ve 6 ay parça garantisi.',
+    title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze, Darıca & Çayırova',
+    description: 'Arçelik, Beko, Samsung, Vestel, Kumtel, Eminçelik ve tüm lider markalarda aynı gün yerinde arıza tespiti ve 6 ay parça garantisi.',
     url: 'https://turkyilmazservis.vercel.app',
     siteName: 'Türkyılmaz Beyaz Eşya Servisi',
     images: [
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze & Darıca',
+    title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze, Darıca & Çayırova',
     description: 'Aynı gün yerinde garantili beyaz eşya, klima ve kombi tamir servisi.',
     images: ['/logo.png'],
   },
@@ -83,7 +85,6 @@ export default function RootLayout({
     '@type': 'ApplianceRepair',
     '@id': 'https://turkyilmazservis.vercel.app/#business',
     name: 'Türkyılmaz Beyaz Eşya Servisi',
-    alternateName: 'Türkyılmaz Teknik Servis',
     url: 'https://turkyilmazservis.vercel.app',
     logo: 'https://turkyilmazservis.vercel.app/logo.png',
     image: 'https://turkyilmazservis.vercel.app/logo.png',
@@ -126,13 +127,13 @@ export default function RootLayout({
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
-      name: 'Beyaz Eşya, Kombi ve Klima Tamir Hizmetleri',
+      name: 'Beyaz Eşya, Ankastre, Kombi ve Klima Tamir Hizmetleri',
       itemListElement: [
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Arçelik Beko Buzdolabı & Çamaşır Makinesi Tamiri'
+            name: 'Arçelik Beko Samsung Vestel Buzdolabı & Çamaşır Makinesi Tamiri'
           }
         },
         {
@@ -146,14 +147,14 @@ export default function RootLayout({
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Klima Bakımı, Gaz Dolumu ve Tamiri'
+            name: 'Kumtel & Eminçelik Ankastre ve Ocak Tamiri'
           }
         },
         {
           '@type': 'Offer',
           itemOffered: {
             '@type': 'Service',
-            name: 'Kombi Periyodik Bakımı ve Petek Temizliği'
+            name: 'Klima ve Kombi Periyodik Bakım Servisi'
           }
         }
       ]
