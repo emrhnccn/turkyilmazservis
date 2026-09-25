@@ -418,8 +418,23 @@ export default async function Home() {
             <Link href="/studio" className="hover:text-orange-400 transition text-zinc-400">Yönetim Paneli</Link>
           </div>
         </div>
-        <div className="max-w-6xl mx-auto mt-6 pt-6 border-t border-zinc-900 text-center text-zinc-400 text-[11px]">
-          © {new Date().getFullYear()} Türkyılmaz Beyaz Eşya Servisi. Tüm hakları saklıdır.
+
+        {/* ALT TELİF & CCN TEKNOLOJİ İMZASI */}
+        <div className="max-w-6xl mx-auto mt-6 pt-6 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-400 text-[11px]">
+          <p>© {new Date().getFullYear()} Türkyılmaz Beyaz Eşya Servisi. Tüm hakları saklıdır.</p>
+          
+          <a
+            href="https://affan-portfolio-gilt.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-800 hover:border-orange-500/50 px-3.5 py-1.5 rounded-full transition-all duration-300 shadow-sm"
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-500 group-hover:animate-ping" />
+            <span className="text-zinc-400 group-hover:text-zinc-200 transition">Tasarım & Yazılım:</span>
+            <span className="font-bold text-orange-400 group-hover:text-orange-300 transition">
+              CCN Teknoloji
+            </span>
+          </a>
         </div>
       </footer>
 
