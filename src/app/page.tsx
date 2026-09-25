@@ -11,11 +11,12 @@ export const revalidate = 60 // Her 60 saniyede bir veya istek geldikçe veriyi 
 async function getData() {
   const settings = await client.fetch(`*[_type == "siteSettings"][0]`)
   const services = await client.fetch(`*[_type == "service"] | order(order asc)`)
-  return { settings, services }
+  const caseStudies = await client.fetch(`*[_type == "caseStudy"] | order(order asc)`) // <-- Eklendi
+  return { settings, services, caseStudies }
 }
 
 export default async function Home() {
-  const { settings, services } = await getData()
+  const { settings, services, caseStudies } = await getData()
 
   const phone = settings?.phone || "0552 116 41 28"
   const whatsapp = settings?.whatsapp || "905521164128"
@@ -225,7 +226,7 @@ export default async function Home() {
         </div>
       </section>
       {/* Sahadan Gerçek Örnekler & Başarı Hikayeleri */}
-      <RepairGallery />
+      <RepairGallery items={caseStudies} />
       {/* Markalar & Sıkça Sorulan Sorular */}
       <BrandsAndFAQ />
 
