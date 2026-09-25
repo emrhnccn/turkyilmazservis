@@ -2,70 +2,126 @@ export interface CaseItemType {
   _id: string
   title: string
   category: string
+  badge: string
   description: string
   solution: string
   image: string
-  badge: string
-}
-
-export interface ServiceItemType {
-  _id: string
-  title: string
-  description: string
-  features: string[]
 }
 
 export const DEFAULT_CASES: CaseItemType[] = [
   {
-    _id: 'b1',
+    _id: 'case-1',
+    title: 'Çamaşır Makinesi Aşırı Ses & Sarsıntı Arızası',
+    category: 'Çamaşır Makinesi Tamiri',
+    badge: 'Orijinal Komple Kazan Değişimi',
+    description: 'Sıkma modunda helikopter sesi gibi aşırı gürültü ve titreme şikayetiyle gidilen adreste tambur rulmanının kilitlendiği tespit edildi.',
+    solution: 'Cihaza fabrika standartlarında %100 orijinal Arçelik komple presli kazan ve amortisör montajı yapıldı, ses tamamen kesildi.',
+    image: '/galeri/sesliçalışıyorşikayetiüzerinebaktığımçamaşırmakinesindearçelikorjinalkazandegisimiypaıyorum.jpeg',
+  },
+  {
+    _id: 'case-2',
+    title: 'Bulaşık Makinesi Suyu Isıtmama & Temiz Yıkamama',
+    category: 'Bulaşık Makinesi Servisi',
+    badge: 'Orijinal Rezistans Değişimi',
+    description: 'Bulaşıkların soğuk suyla yıkandığı, yağların çözülmediği ve program sonunda kurutma yapmadığı şikayeti incelendi.',
+    solution: 'Alt karter sökülerek arızalanan sirkülasyon ısıtıcı tüpü (rezistans) ve sensör grubu orijinal Vestel parça ile değiştirildi.',
+    image: '/galeri/vestel.bulasıkmakinesi_rezisdansdegisimi.jpg',
+  },
+  {
+    _id: 'case-3',
+    title: 'Kurutma Makinesi Orijinal Tahrik Motoru Değişimi',
+    category: 'Kurutma Makinesi Servisi',
+    badge: 'Sıfır Motor & Gergi Kayışı',
+    description: 'Kurutma makinesinin açıldığında vınlama sesi verip tamburunun dönmemesi ve aşırı ısınması arızası tespit edildi.',
+    solution: 'Yetkili servis kutulu orijinal motor ve gergi kasnağı montajı yapılarak cihaz fabrikasyon sessizliğine kavuşturuldu.',
+    image: '/galeri/k1motor.jpeg',
+  },
+  {
+    _id: 'case-4',
+    title: 'Kurutma Makinesi Su Boşaltmama & Alarm Uyarısı',
+    category: 'Kurutma Makinesi Servisi',
+    badge: 'Tahliye Pompası Yenileme',
+    description: 'Programın ortasında cihazın su haznesi dolu ikazı vermesi ve yoğuşan suyu tanka iletememesi arızası.',
+    solution: 'Tekstil tiftikleriyle kilitlenmiş yoğuşma su tahliye pompası söküldü, kanal temizliği yapılıp sıfır pompa takıldı.',
+    image: '/galeri/5.jpeg',
+  },
+  {
+    _id: 'case-5',
+    title: 'Isı Pompalı Kurutma Makinesi Aşırı Tozlanma & Geç Kurutma',
+    category: 'Periyodik Bakım & Temizlik',
+    badge: 'Detaylı Kanal & Hijyen Revizyonu',
+    description: 'Kurutma süresinin 4-5 saate çıkması ve cihazın alt kısımlarından yanık toz kokusu gelmesi arızası.',
+    solution: 'Cihaz gövdesi komple dağıtılarak evap kanalları, tiftik filtreleri ve hava sirkülasyon yolları kimyasal arındırmayla açıldı.',
+    image: '/galeri/1.jpeg',
+  },
+  {
+    _id: 'case-6',
+    title: 'Kurutma Tambur Sürtme ve Gıcırtı Sesi',
+    category: 'Kurutma Makinesi Servisi',
+    badge: 'Ön Destek & Rulman Revizyonu',
+    description: 'Tambur dönerken sürekli metalik gıcırtı sesi yapması ve çamaşırların kenarlara takılması şikayeti.',
+    solution: 'Aşınan ön destek tekerlekleri ve tambur yatak keçeleri değiştirilerek sürtünme sıfırlandı.',
+    image: '/galeri/3.jpeg',
+  },
+  {
+    _id: 'case-7',
+    title: 'Kurutma Makinesi Komple Mekanik Hat Revizyonu',
+    category: 'Kurutma Makinesi Servisi',
+    badge: 'Tambur & Kayış Hattı Kontrolü',
+    description: 'Yüksek devirde dönen tambur arkasından ritmik sürtünme sesi gelmesi şikayeti.',
+    solution: 'Kurutma kazanı indirilip arka yataklama burçları, motor kayış gergi yayları ve hava kanalları sıfırlandı.',
+    image: '/galeri/6.jpeg',
+  },
+  {
+    _id: 'case-8',
+    title: 'Tahliye & Yoğuşma Boruları Tıkanıklık Giderme',
+    category: 'Kurutma Makinesi Servisi',
+    badge: 'Hortum & Şamandıra Onarımı',
+    description: 'Alt kısımdan dışarıya su sızdırma ve taşma emniyet sviçinin devreye girerek programı kesmesi arızası.',
+    solution: 'Kireçlenen ve tiftikten tıkanan drenaj boruları yenilendi, mikro sviç yuvası kontrol edilerek test edildi.',
+    image: '/galeri/2.jpeg',
+  },
+  {
+    _id: 'case-9',
     title: 'Buzdolabı Soğutmama Arızası & Doğru Teşhis',
     category: 'Buzdolabı Onarımı',
-    description: 'Cihaz soğutmuyor şikayetiyle gidilen adreste, daha önce motor arızalı denilerek yüksek maliyet çıkarılmış olan cihaz incelendi.',
-    solution: 'Yapılan detaylı testlerde motorun sağlam olduğu, sensörde oksitlenme ve kablo kopukluğu tespit edildi. Orijinal sensör değişimi ve kablo revizyonuyla cihaz ilk günkü soğutma performansına döndürüldü.',
+    badge: 'Gereksiz Motor Masrafından Kurtarıldı',
+    description: 'Cihaz soğutmuyor şikayetiyle gidilen adreste başka yerlerce motor arızalı denilerek yüksek maliyet çıkarılan cihaz incelendi.',
+    solution: 'Yapılan testlerde motorun sağlam olduğu, sensör kablo soketlerinde oksitlenme olduğu tespit edilip orijinal parça ile onarıldı.',
     image: '/galeri/b1.jpeg',
-    badge: 'Gereksiz Motor Masrafından Kurtarıldı'
   },
   {
-    _id: 'k1',
-    title: 'Kurutma Makinesi Orijinal Motor Değişimi',
-    category: 'Kurutma Makinesi Servisi',
-    description: 'Tamburu dönmeyen ve yüksek sürtünme sesi çıkaran kurutma makinesinin arıza tespiti yerinde yapıldı.',
-    solution: 'Fabrika standartlarında %100 orijinal yedek motor montajı yapıldı, hava kanalları liflerden arındırıldı ve 6 ay resmi garanti ile teslim edildi.',
-    image: '/galeri/k1.jpeg',
-    badge: 'Orijinal Motor & 6 Ay Garanti'
-  },
-  {
-    _id: 'o1',
-    title: 'Vitroseramik Cam Ocak Patlaması & Orijinal Cam Değişimi',
+    _id: 'case-10',
+    title: 'Vitroseramik Cam Ocak Patlaması & Orijinal Değişim',
     category: 'Ankastre & Ocak Servisi',
-    description: 'Aşırı yüklenme ve darbe kaynaklı camı patlayan ankastre cam ocağın yenileme çalışması.',
-    solution: 'Güvenlik kontrolleri sağlandıktan sonra fabrika çıkışlı orijinal darbeye ve yüksek ısıya dayanıklı temperli cam montajı tamamlandı.',
+    badge: 'Orijinal Isıya Dayanıklı Cam',
+    description: 'Darbe kaynaklı camı patlayan ankastre cam ocağın güvenlik ve gaz sızdırmazlık kontrolleri yapıldı.',
+    solution: 'Fabrika çıkışlı temperli yüksek ısıya dayanıklı orijinal cam tablası ve bek contaları yerinde sıfırlandı.',
     image: '/galeri/o1.jpeg',
-    badge: 'Orijinal Cam Değişimi'
   }
 ]
 
-export const DEFAULT_SERVICES: ServiceItemType[] = [
+export const DEFAULT_SERVICES = [
   {
-    _id: 's1',
+    _id: 's-1',
     title: 'Buzdolabı Servisi',
     description: 'Soğutmama, motor arızası, gaz kaçağı ve buzlanma problemlerine yerinde garantili çözüm.',
     features: ['Gaz Kaçağı Tespiti', 'Motor & Kompresör Değişimi', 'Sensör & Termostat Tamiri']
   },
   {
-    _id: 's2',
+    _id: 's-2',
     title: 'Çamaşır Makinesi Tamiri',
     description: 'Su akıtma, sıkmama, gürültülü çalışma ve kazan dönmeme arızalarına orijinal yedek parça garantisi.',
     features: ['Kazan Rulman Değişimi', 'Pompa & Kilit Onarımı', 'Elektronik Kart Revizyonu']
   },
   {
-    _id: 's3',
+    _id: 's-3',
     title: 'Bulaşık Makinesi Servisi',
     description: 'İyi yıkamama, su boşaltmama ve kart arızaları aynı gün servis desteği ile giderilir.',
     features: ['Fıskiye & Motor Bakımı', 'Ventil & Ventil Hortumu Değişimi', 'Tahliye Pompası Onarımı']
   },
   {
-    _id: 's4',
+    _id: 's-4',
     title: 'Kurutma Makinesi & Fırın',
     description: 'Kurutmayan cihazlar, rezistans arızaları ve cam patlamalarında fabrika standartlarında onarım.',
     features: ['Orijinal Rezistans', 'Filtre & Kanal Temizliği', 'Isı Termiği Değişimi']
