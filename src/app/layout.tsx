@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 
-// Font optimizasyonu: render-blocking süresini keser ve LCP'yi öne çeker
 const inter = Inter({ 
   subsets: ['latin'],
   display: 'swap',
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
     default: 'Gebze & Darıca Beyaz Eşya Servisi | Arçelik Beko Kombi Tamiri',
     template: '%s | Türkyılmaz Beyaz Eşya Servisi'
   },
-  description: 'Gebze, Darıca ve Çayırova geneli Arçelik, Beko, Bosch beyaz eşya tamiri, kombi ve klima bakımı. 6 ay garantili yerinde servis: 0552 116 41 28.',
+  description: 'Gebze, Darıca ve Çayırova geneli Arçelik, Beko, Altus, Vestel beyaz eşya tamiri, kombi ve klima bakımı. 6 ay garantili yerinde servis: 0552 116 41 28.',
   keywords: [
     'gebze beyaz eşya servisi',
     'gebze beyaz eşya tamiri',
@@ -25,6 +24,8 @@ export const metadata: Metadata = {
     'gebze arçelik servisi',
     'beko servis darıca',
     'gebze beko servisi',
+    'altus servis darıca',
+    'grundig servis darıca',
     'arçelik buzdolabı tamiri',
     'arçelik klima servisi darıca',
     'gebze klima servisi',
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Türkyılmaz Beyaz Eşya Servisi - Gebze & Darıca',
-    description: 'Arçelik, Beko, Bosch ve tüm markalarda aynı gün yerinde arıza tespiti ve 6 ay parça garantisi.',
+    description: 'Arçelik, Beko, Altus, Vestel ve tüm lider markalarda aynı gün yerinde arıza tespiti ve 6 ay parça garantisi.',
     url: 'https://turkyilmazservis.vercel.app',
     siteName: 'Türkyılmaz Beyaz Eşya Servisi',
     images: [

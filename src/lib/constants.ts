@@ -25,7 +25,7 @@ export const DEFAULT_CASES: CaseItemType[] = [
     badge: 'Orijinal Rezistans Değişimi',
     description: 'Bulaşıkların soğuk suyla yıkandığı, yağların çözülmediği ve program sonunda kurutma yapmadığı şikayeti incelendi.',
     solution: 'Alt karter sökülerek arızalanan sirkülasyon ısıtıcı tüpü (rezistans) ve sensör grubu orijinal Vestel parça ile değiştirildi.',
-    image: '/galeri/bulasik-rezistans.jpeg',
+    image: '/galeri/bulasik-rezistans.jpg',
   },
   {
     _id: 'case-3',
@@ -138,4 +138,53 @@ export const DEFAULT_SERVICES = [
     description: 'Geç kurutma, filtre tıkanıklığı, motor yanması ve cam ocak patlamalarında fabrika standartlarında onarım.',
     features: ['Sıfır Tahrik Motoru Değişimi', 'Kondenser & Drenaj Pompası', 'Orijinal Isıya Dayanıklı Cam']
   }
+  
+]
+export interface SparePartItemType {
+  _id: string
+  title: string
+  category: string
+  compatibleBrands: string
+  condition: 'new' | 'refurbished'
+  description: string
+  image: string
+}
+
+export const DEFAULT_PARTS: SparePartItemType[] = [
+  {
+    _id: 'part-1',
+    title: 'Çamaşır Makinesi Orijinal Dış Kapak & Menteşe Grubu',
+    category: 'Çamaşır Makinesi Parçaları',
+    compatibleBrands: 'Arçelik, Beko, Altus',
+    condition: 'new',
+    description: 'Kırılan menteşe veya çatlayan cam kapaklar için komple dış çerçeve, emniyet kilit dili ve cam montaj grubu.',
+    image: '/galeri/sesliçalışıyorşikayetiüzerinebaktığımçamaşırmakinesindearçelikorjinalkazandegisimiypaıyorum.jpeg',
+  },
+  {
+    _id: 'part-2',
+    title: 'Bulaşık Makinesi Akış Tipi Isıtıcı Rezistans',
+    category: 'Bulaşık Makinesi Parçaları',
+    compatibleBrands: 'Vestel, Profilo, Regal',
+    condition: 'new',
+    description: 'Suyu ısıtmama hatası veren modeller için orijinal soketli sirkülasyon ısıtıcı tüp.',
+    image: '/galeri/bulasik-rezistans.jpg',
+  },
+  {
+    _id: 'part-3',
+    title: 'Kurutma Makinesi Orijinal Tahrik Motoru & Gergi',
+    category: 'Kurutma Makinesi Parçaları',
+    compatibleBrands: 'Arçelik, Beko, Grundig',
+    condition: 'new',
+    description: 'Tambur dönmeme arızalarında sıfır kutulu motor, kayış kasnağı ve gergi yayı seti.',
+    image: '/galeri/k1motor.jpeg',
+  },
+  {
+    _id: 'part-4',
+    title: 'Kurutma & Yoğuşma Suyu Tahliye Pompası',
+    category: 'Kurutma Makinesi Parçaları',
+    compatibleBrands: 'Arçelik, Beko, Altus',
+    condition: 'refurbished',
+    description: 'Su haznesi dolu ikazı veren cihazlar için test edilmiş, tiftik filtre kanalları revize edilmiş orijinal pompa motoru.',
+    image: '/galeri/5.jpeg',
+  },
 ]

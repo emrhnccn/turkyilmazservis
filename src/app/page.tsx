@@ -73,7 +73,7 @@ export default async function Home() {
     },
     {
       q: 'Hangi cihaz ve markalara hizmet veriyorsunuz?',
-      a: 'Arçelik, Beko, Altus, Vestel, Bosch, Siemens, Samsung, LG ve tüm lider markaların buzdolabı, çamaşır, bulaşık, kurutma makineleri ile kombi ve klimalarına garantili teknik servis sağlıyoruz.'
+      a: 'Arçelik, Beko, Altus, Vestel, Profilo, Grundig, Samsung, LG ve benzeri lider markaların buzdolabı, çamaşır, bulaşık, kurutma makineleri ile kombi ve klimalarına garantili teknik servis sağlıyoruz.'
     },
     {
       q: 'Gebze ve Darıca dışındaki ilçelere servisiniz var mı?',
@@ -85,8 +85,9 @@ export default async function Home() {
     }
   ]
 
+  // Bosch tamamen çıkarıldı, yerine Profilo ve Grundig eklendi
   const brands = [
-    'Arçelik', 'Beko', 'Altus', 'Bosch', 'Siemens', 'Vestel', 'Samsung', 'LG', 'Profilo', 'Regal', 'DemirDöküm', 'Baymak'
+    'Arçelik', 'Beko', 'Altus', 'Vestel', 'Profilo', 'Grundig', 'Samsung', 'LG', 'Regal', 'DemirDöküm', 'Baymak'
   ]
 
   return (
@@ -157,6 +158,13 @@ export default async function Home() {
               <span>Periyodik Bakım</span>
             </Link>
             <Link 
+  href="/yedek-parca" 
+  className="hidden sm:inline-flex text-xs font-bold text-zinc-200 hover:text-red-500 transition px-2.5 py-1.5"
+>
+  Yedek Parça
+</Link>
+
+            <Link 
               href="/iletisim" 
               className="hidden sm:inline-flex text-xs font-bold text-zinc-200 hover:text-red-500 transition px-2.5 py-1.5"
             >
@@ -192,7 +200,7 @@ export default async function Home() {
           </h1>
 
           <p className="mt-5 text-sm sm:text-lg text-zinc-200 max-w-2xl mx-auto leading-relaxed">
-            Arçelik, Beko, Altus, Vestel ve Bosch cihazlarınızda doğru teşhis, orijinal yedek parça ve <strong className="text-red-500 font-bold underline decoration-red-600/40 underline-offset-4">6 ay resmi servis garantisi</strong> ile adresinizde tamir.
+            Arçelik, Beko, Altus, Vestel, Profilo ve Grundig cihazlarınızda doğru teşhis, orijinal yedek parça ve <strong className="text-red-500 font-bold underline decoration-red-600/40 underline-offset-4">6 ay resmi servis garantisi</strong> ile adresinizde tamir.
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
@@ -333,7 +341,7 @@ export default async function Home() {
             Gebze & Darıca Beyaz Eşya Servisi, Kombi & Klima Özel Servis Çözümleri
           </h2>
           <p>
-            Türkyılmaz Beyaz Eşya Servisi olarak; <strong>Gebze</strong>, <strong>Darıca</strong>, <strong>Çayırova</strong> ve <strong>Dilovası</strong> başta olmak üzere Kocaeli genelinde başta <strong>Arçelik</strong>, <strong>Beko</strong>, <strong>Altus</strong>, <strong>Vestel</strong>, <strong>Bosch</strong> ve <strong>Siemens</strong> markalarının <em>buzdolabı motor değişimi</em>, <em>çamaşır makinesi kazan rulman onarımı</em>, <em>bulaşık makinesi rezistans ve pompa tamiri</em> ile <em>klima gaz dolumu</em> ve <em>periyodik kombi bakımı</em> alanında yerinde garantili hizmet sağlamaktayız.
+            Türkyılmaz Beyaz Eşya Servisi olarak; <strong>Gebze</strong>, <strong>Darıca</strong>, <strong>Çayırova</strong> ve <strong>Dilovası</strong> başta olmak üzere Kocaeli genelinde başta <strong>Arçelik</strong>, <strong>Beko</strong>, <strong>Altus</strong>, <strong>Vestel</strong>, <strong>Profilo</strong> ve <strong>Grundig</strong> markalarının <em>buzdolabı motor değişimi</em>, <em>çamaşır makinesi kazan rulman onarımı</em>, <em>bulaşık makinesi rezistans ve pompa tamiri</em> ile <em>klima gaz dolumu</em> ve <em>periyodik kombi bakımı</em> alanında yerinde garantili hizmet sağlamaktayız.
           </p>
           <p>
             Darıca Fevziçakmak Mahallesi atölyemizden hareket eden donanımlı gezici servis araçlarımız, adresinize gelerek cihazınızı yerinde test eder ve değişen her orijinal parçaya 6 ay resmi servis garantisi sunar.
@@ -470,7 +478,7 @@ export default async function Home() {
               </div>
             </div>
             <p className="text-zinc-300 text-xs leading-relaxed max-w-md">
-              Arçelik, Beko, Altus, Vestel ve Bosch buzdolabı, çamaşır, bulaşık makineleri ile kombi ve klima onarımında 6 ay resmi parça garantili yerinde teknik servis hizmeti.
+              Arçelik, Beko, Altus, Vestel, Profilo ve Grundig buzdolabı, çamaşır, bulaşık makineleri ile kombi ve klima onarımında 6 ay resmi parça garantili yerinde teknik servis hizmeti.
             </p>
           </div>
 
@@ -480,6 +488,7 @@ export default async function Home() {
               <li><Link href="/" className="hover:text-red-500 transition">Ana Sayfa</Link></li>
               <li><Link href="/islerimiz" className="hover:text-red-500 transition">Yapılan Sahadan İşler</Link></li>
               <li><Link href="/periyodik-bakim" className="hover:text-red-500 transition">Periyodik Bakım Kaydı</Link></li>
+              <li><Link href="/yedek-parca" className="hover:text-red-500 transition">Yedek Parça & Ürünler</Link></li>
               <li><Link href="/iletisim" className="hover:text-red-500 transition">İletişim & Dükkan Konumu</Link></li>
             </ul>
           </div>
