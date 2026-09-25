@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar'
 import FloatingCTA from '@/components/FloatingCTA'
 import ServiceForm from '@/components/ServiceForm'
 import BrandsAndFAQ from '@/components/BrandsAndFAQ'
+import RepairGallery from '@/components/RepairGallery'
 import { Phone, CheckCircle2, Wrench, ShieldCheck, Zap, MapPin, Star, Clock, Sparkles, Wind, Flame, RefreshCw } from 'lucide-react'
 import Image from 'next/image'
 export const revalidate = 60 // Her 60 saniyede bir veya istek geldikçe veriyi günceller
@@ -223,6 +224,8 @@ export default async function Home() {
           )}
         </div>
       </section>
+      {/* Sahadan Gerçek Örnekler & Başarı Hikayeleri */}
+      <RepairGallery />
       {/* Markalar & Sıkça Sorulan Sorular */}
       <BrandsAndFAQ />
 
