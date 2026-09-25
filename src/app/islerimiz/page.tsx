@@ -30,8 +30,23 @@ export default async function WorksPage() {
   }
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-slate-100 py-12 px-4 sm:px-6 lg:px-8 selection:bg-orange-500 selection:text-white">
-      <div className="max-w-6xl mx-auto">
+    <main className="relative min-h-screen bg-zinc-950 text-slate-100 py-12 px-4 sm:px-6 lg:px-10 selection:bg-orange-500 selection:text-white overflow-hidden">
+      
+      {/* Kenar Işıkları & Ambiyans Efektleri */}
+      <div className="pointer-events-none absolute -left-48 top-1/4 w-96 h-96 bg-orange-600/15 rounded-full blur-[130px] -z-10" />
+      <div className="pointer-events-none absolute -right-48 top-1/3 w-96 h-96 bg-amber-500/15 rounded-full blur-[130px] -z-10" />
+      <div className="pointer-events-none absolute left-1/2 -top-24 -translate-x-1/2 w-[700px] h-[350px] bg-orange-500/10 rounded-full blur-[140px] -z-10" />
+
+      {/* Arka plan nokta deseni */}
+      <div 
+        className="pointer-events-none absolute inset-0 opacity-[0.03] -z-10"
+        style={{
+          backgroundImage: 'radial-gradient(circle at 1px 1px, #ff8c00 1px, transparent 0)',
+          backgroundSize: '36px 36px'
+        }}
+      />
+
+      <div className="max-w-7xl mx-auto relative">
         
         {/* Üst Navigasyon */}
         <div className="flex items-center justify-between mb-10 pb-5 border-b border-zinc-800">
@@ -52,7 +67,7 @@ export default async function WorksPage() {
 
         {/* Başlık */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/50 px-3.5 py-1.5 rounded-full border border-orange-500/30">
+          <span className="text-xs font-bold text-orange-400 tracking-wider uppercase bg-orange-950/60 px-4 py-1.5 rounded-full border border-orange-500/30">
             Tüm Sahadan İşlerimiz
           </span>
           <h1 className="text-3xl sm:text-5xl font-black text-white mt-4 tracking-tight">
