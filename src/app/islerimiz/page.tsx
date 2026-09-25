@@ -2,10 +2,10 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { client, urlFor } from '@/sanity/lib/client'
-import { DEFAULT_CASES } from '@/lib/constants'
+import { DEFAULT_CASES } from '../../lib/constants'
 import { Wrench, CheckCircle2, ArrowLeft, PhoneCall } from 'lucide-react'
 
-export const revalidate = 10 // Panelden yeni iş eklenince 10 saniye içinde sayfaya yansısın
+export const revalidate = 10
 
 async function getCaseStudies() {
   try {
@@ -17,7 +17,6 @@ async function getCaseStudies() {
 
 export default async function WorksPage() {
   const sanityCases = await getCaseStudies()
-  // Paneldeki kayıtlar + varsayılan kayıtlar birleşsin, böylece sayfa asla boş kalmaz
   const allCases = [...sanityCases, ...DEFAULT_CASES]
 
   const getImageUrl = (img: any) => {
@@ -33,6 +32,7 @@ export default async function WorksPage() {
   return (
     <main className="min-h-screen bg-slate-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
+        
         {/* Üst Navigasyon */}
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200">
           <Link
@@ -42,10 +42,11 @@ export default async function WorksPage() {
             <ArrowLeft className="w-4 h-4" /> Ana Sayfaya Dön
           </Link>
           <a
-            href="tel:05330000000" // İletişim numarası
+            href="tel:05521164128"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-xl transition"
           >
-            <PhoneCall className="w-4 h-4" /> Servis Çağır
+            <PhoneCall className="w-4 h-4 animate-pulse" />
+            <span>Servis Çağır: 0552 116 41 28</span>
           </a>
         </div>
 
@@ -62,7 +63,7 @@ export default async function WorksPage() {
           </p>
         </div>
 
-        {/* Kartlar Izgarası */}
+        {/* Kartlar */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {allCases.map((item, idx) => (
             <div
@@ -74,6 +75,7 @@ export default async function WorksPage() {
                   src={getImageUrl(item.image)}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                 />
                 <div className="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full">

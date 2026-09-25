@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { client } from '@/sanity/lib/client'
-import WhatsAppWidget from '@/components/WhatsappWidget'
+import WhatsappWidget from '@/components/WhatsappWidget'
 import { 
   PhoneCall, 
   MapPin, 
@@ -18,13 +18,13 @@ async function getSettings() {
   try {
     const settings = await client.fetch(`*[_type == "siteSettings"][0]`)
     return settings || {
-      phone: '0533 000 00 00',
+      phone: '0552 116 41 28',
       siteName: 'Türkyılmaz Teknik Servis',
       serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
     }
   } catch {
     return {
-      phone: '0533 000 00 00',
+      phone: '0552 116 41 28',
       siteName: 'Türkyılmaz Teknik Servis',
       serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
     }
@@ -33,9 +33,9 @@ async function getSettings() {
 
 export default async function ContactPage() {
   const settings = await getSettings()
-  const phone = settings?.phone || '0533 000 00 00'
+  const phone = settings?.phone || '0552 116 41 28'
   const cleanPhone = phone.replace(/\s+/g, '').replace('+', '')
-  const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası']
+  const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Mutlukent', 'Beylikbağı']
 
   return (
     <main className="min-h-screen bg-slate-50 text-slate-800 py-10 px-4 sm:px-6 lg:px-8">
@@ -67,25 +67,24 @@ export default async function ContactPage() {
             İletişim & Servis Randevusu
           </h1>
           <p className="text-slate-600 mt-3 text-sm sm:text-base">
-            Gebze ve çevre ilçelerde aynı gün yerinde servis için bize telefonla veya WhatsApp şablonları üzerinden anında ulaşabilirsiniz.
+            Kocaeli ve çevre ilçelerde aynı gün yerinde servis için bize telefonla veya WhatsApp şablonları üzerinden anında ulaşabilirsiniz.
           </p>
         </div>
 
-        {/* Ana Izgara: Sol Taraf WhatsApp Kartı & İletişim Bilgileri, Sağ Taraf Harita */}
+        {/* Ana Izgara */}
         <div className="grid lg:grid-cols-12 gap-8 items-start">
           
-          {/* Sol Kolon (5 Birim): Sabit WhatsApp Şablon Kartı */}
+          {/* Sol Kolon: Sabit WhatsApp Formu & Hızlı Arama */}
           <div className="lg:col-span-5 space-y-6">
             <div>
               <h2 className="text-sm font-bold text-slate-700 uppercase tracking-wider mb-2 flex items-center gap-2">
                 <CalendarCheck className="w-4 h-4 text-emerald-600" />
                 Hızlı WhatsApp Randevu Formu
               </h2>
-              {/* Sabit Duran Şablonlu Kart */}
-              <WhatsAppWidget phone={phone} isStatic={true} />
+              {/* Sayfada sabit açık duran şablon kartı */}
+              <WhatsappWidget phone={phone} isStatic={true} />
             </div>
 
-            {/* Hızlı Arama Kutusu */}
             <div className="bg-gradient-to-br from-blue-600 to-indigo-700 text-white p-6 rounded-3xl shadow-lg">
               <h3 className="font-bold text-lg mb-1">Acil Servis Çağrısı</h3>
               <p className="text-blue-100 text-xs mb-4">Beklemeden ustamızla doğrudan görüşün:</p>
@@ -99,10 +98,8 @@ export default async function ContactPage() {
             </div>
           </div>
 
-          {/* Sağ Kolon (7 Birim): Harita & Detaylı Bilgiler */}
+          {/* Sağ Kolon: Google Harita & Bilgiler */}
           <div className="lg:col-span-7 space-y-6">
-            
-            {/* Google Harita */}
             <div className="bg-white p-4 rounded-3xl border border-slate-200 shadow-sm">
               <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden bg-slate-100">
                 <iframe
@@ -118,10 +115,7 @@ export default async function ContactPage() {
               </div>
             </div>
 
-            {/* Bilgi Kartları Izgarası */}
             <div className="grid sm:grid-cols-2 gap-4">
-              
-              {/* Çalışma Saatleri */}
               <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
                 <div className="w-9 h-9 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-3">
                   <Clock className="w-5 h-5" />
@@ -131,7 +125,6 @@ export default async function ContactPage() {
                 <p className="text-xs text-slate-500">Pazar: Acil Nöbetçi Servis</p>
               </div>
 
-              {/* Garanti */}
               <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs">
                 <div className="w-9 h-9 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-3">
                   <ShieldCheck className="w-5 h-5" />
@@ -139,10 +132,8 @@ export default async function ContactPage() {
                 <h4 className="font-bold text-slate-900 text-sm">Parça Garantisi</h4>
                 <p className="text-xs text-slate-500 mt-1">Tüm orijinal parça değişimlerinde 6 ay resmi garanti belgesi verilir.</p>
               </div>
-
             </div>
 
-            {/* Servis Bölgeleri */}
             <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-xs">
               <h4 className="font-bold text-slate-900 text-sm flex items-center gap-2 mb-3">
                 <MapPin className="w-4 h-4 text-rose-600" />

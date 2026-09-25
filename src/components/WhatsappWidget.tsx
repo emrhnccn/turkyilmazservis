@@ -4,11 +4,11 @@ import React, { useState } from 'react'
 import { MessageCircle, X, Send, PhoneCall } from 'lucide-react'
 
 interface WhatsAppWidgetProps {
-  phone: string
+  phone?: string
   isStatic?: boolean
 }
 
-export default function WhatsAppWidget({ phone, isStatic = false }: WhatsAppWidgetProps) {
+export default function WhatsappWidget({ phone = '0552 116 41 28', isStatic = false }: WhatsAppWidgetProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [customMsg, setCustomMsg] = useState('')
 
@@ -48,13 +48,12 @@ export default function WhatsAppWidget({ phone, isStatic = false }: WhatsAppWidg
   }
 
   const CardContent = (
-    <div className="w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
-      {/* Kart Başlığı */}
+    <div className="w-full bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden text-left">
       <div className="bg-gradient-to-r from-emerald-600 to-teal-700 p-4 text-white relative">
         {!isStatic && (
           <button
             onClick={() => setIsOpen(false)}
-            className="absolute top-3.5 right-3.5 w-7 h-7 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition"
+            className="absolute top-3.5 right-3.5 w-7 h-7 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition cursor-pointer"
           >
             <X className="w-4 h-4 text-white" />
           </button>
@@ -67,16 +66,15 @@ export default function WhatsAppWidget({ phone, isStatic = false }: WhatsAppWidg
             <span className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-white rounded-full"></span>
           </div>
           <div>
-            <h4 className="font-bold text-sm tracking-tight">Türkyılmaz Servis WhatsApp Hattı</h4>
+            <h4 className="font-bold text-sm tracking-tight">Türkyılmaz Servis Hattı</h4>
             <p className="text-[11px] text-emerald-100 flex items-center gap-1">
               <span className="w-1.5 h-1.5 bg-emerald-300 rounded-full animate-pulse"></span>
-              Şu an Çevrimiçi • Anında Yanıt
+              0552 116 41 28 • Çevrimiçi
             </p>
           </div>
         </div>
       </div>
 
-      {/* Kart Gövdesi */}
       <div className="p-4 bg-slate-50 space-y-3">
         <div className="bg-white p-3 rounded-2xl rounded-tl-none border border-slate-200 shadow-xs max-w-[95%]">
           <p className="text-xs text-slate-700 leading-relaxed">
@@ -85,7 +83,6 @@ export default function WhatsAppWidget({ phone, isStatic = false }: WhatsAppWidg
           <span className="text-[10px] text-slate-400 mt-1 block text-right">Az önce</span>
         </div>
 
-        {/* Hazır Şablonlar */}
         <div className="space-y-1.5 pt-1">
           <p className="text-[11px] font-bold text-slate-400 uppercase tracking-wider px-1">
             Hızlı Şablon Seçin:
@@ -103,7 +100,6 @@ export default function WhatsAppWidget({ phone, isStatic = false }: WhatsAppWidg
           </div>
         </div>
 
-        {/* Manuel Mesaj Girişi */}
         <div className="pt-2">
           <div className="flex items-center gap-2 bg-white border border-slate-200 rounded-2xl p-1.5 pl-3 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-100 transition">
             <input
@@ -133,12 +129,10 @@ export default function WhatsAppWidget({ phone, isStatic = false }: WhatsAppWidg
     </div>
   )
 
-  // Eğer İletişim sayfasındaysak doğrudan sabit kartı döndür
   if (isStatic) {
     return CardContent
   }
 
-  // Normal sayfalardaki sağ altta açılır buton
   return (
     <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
       {isOpen && (

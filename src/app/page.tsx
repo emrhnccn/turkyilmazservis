@@ -2,7 +2,7 @@ import { client } from '@/sanity/lib/client'
 import { DEFAULT_SERVICES, DEFAULT_CASES } from '../lib/constants'
 import RepairGallery from '@/components/RepairGallery'
 import Link from 'next/link'
-import WhatsAppWidget from '@/components/WhatsappWidget'
+import WhatsappWidget from '@/components/WhatsappWidget'
 import { 
   PhoneCall, 
   ShieldCheck, 
@@ -12,8 +12,7 @@ import {
   CheckCircle2, 
   ChevronRight,
   MessageCircle,
-  HelpCircle,
-  Sparkles
+  HelpCircle
 } from 'lucide-react'
 
 export const revalidate = 60
@@ -28,7 +27,7 @@ async function getData() {
 
     return { 
       settings: settings || {
-        phone: '0533 000 00 00',
+        phone: '0552 116 41 28',
         siteName: 'Türkyılmaz Teknik Servis',
         serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası']
       }, 
@@ -38,7 +37,7 @@ async function getData() {
   } catch (error) {
     return { 
       settings: {
-        phone: '0533 000 00 00',
+        phone: '0552 116 41 28',
         siteName: 'Türkyılmaz Teknik Servis',
         serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası']
       }, 
@@ -50,10 +49,9 @@ async function getData() {
 
 export default async function Home() {
   const { settings, services, caseStudies } = await getData()
-  const phone = settings?.phone || '0533 000 00 00'
+  const phone = settings?.phone || '0552 116 41 28'
   const cleanPhone = phone.replace(/\s+/g, '').replace('+', '')
   
-  // WhatsApp formatı (Türkiye için 90 eklenmiş hali)
   const waPhone = cleanPhone.startsWith('0') 
     ? `90${cleanPhone.slice(1)}` 
     : cleanPhone.startsWith('90') 
@@ -145,7 +143,7 @@ export default async function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold px-3.5 py-1.5 rounded-full mb-6 border border-blue-200">
             <ShieldCheck className="w-4 h-4 text-blue-600" />
-            <span>Gebze & Çevre Bölgelerde Aynı Gün Yerinde Servis</span>
+            <span>Kocaeli & Çevre Bölgelerde Aynı Gün Yerinde Servis</span>
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-900 tracking-tight leading-tight sm:leading-none">
@@ -285,14 +283,12 @@ export default async function Home() {
       <section className="py-16 px-4 max-w-6xl mx-auto">
         <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
-            
-            {/* Sol Taraf: Bölgeler & Açıklama */}
             <div>
               <span className="text-xs font-bold text-blue-600 tracking-wider uppercase bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
                 Hizmet Bölgelerimiz
               </span>
               <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-3 tracking-tight">
-                Gebze ve Çevresinde Kapınıza Kadar Geliyoruz
+                Kocaeli ve Çevresinde Kapınıza Kadar Geliyoruz
               </h2>
               <p className="text-slate-600 mt-3 text-sm leading-relaxed">
                 Gezici servis araçlarımızla bildirdiğiniz arızalara en kısa sürede ulaşıyor, arızayı yerinde tespit edip hızlıca çözüme kavuşturuyoruz.
@@ -329,8 +325,7 @@ export default async function Home() {
               </div>
             </div>
 
-            {/* Sağ Taraf: Google Harita */}
-            <div className="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-slate-200 shadow-inner bg-slate-100">
+            <div className="w-full h-80 sm:h-96 rounded-2xl border border-slate-200 shadow-inner bg-slate-100 overflow-hidden">
               <iframe
                 title="Türkyılmaz Teknik Servis Hizmet Bölgesi"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48332.22851410183!2d29.40428587448834!3d40.80373461280327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cb207d57a22ffb%3A0x6b4845ec2d346067!2sGebze%2C%20Kocaeli!5e0!3m2!1str!2str!4v1711000000000!5m2!1str!2str"
@@ -342,12 +337,11 @@ export default async function Home() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-
           </div>
         </div>
       </section>
 
-      {/* 7. SSS (SIKÇA SORULAN SORULAR) */}
+      {/* 7. SSS */}
       <section className="py-16 px-4 max-w-4xl mx-auto">
         <div className="text-center mb-10">
           <span className="text-xs font-bold text-indigo-600 tracking-wider uppercase bg-indigo-50 px-3.5 py-1.5 rounded-full border border-indigo-200">
@@ -409,33 +403,12 @@ export default async function Home() {
             <Link href="/islerimiz" className="hover:text-white transition">Yapılan İşler</Link>
             <Link href="/iletisim" className="hover:text-white transition">İletişim</Link>
             <Link href="/studio" className="hover:text-white transition text-slate-500">Yönetim Paneli</Link>
-          
           </div>
         </div>
       </footer>
 
-      {/* 10. SAĞ ALTA SABİTLENMİŞ WHATSAPP & ARA BUTONLARI (MOBİL & MASAÜSTÜ İÇİN DÖNÜŞÜM ARTIRICI) */}
-      <div className="fixed bottom-5 right-5 z-50 flex flex-col gap-3">
-        {/* WhatsApp Butonu */}
-        <a
-          href={`https://wa.me/${waPhone}?text=Merhaba,%20teknik%20servis%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.`}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="WhatsApp ile İletişime Geç"
-          className="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/40 hover:scale-110 active:scale-95 transition-all duration-300"
-        >
-          <MessageCircle className="w-7 h-7" />
-        </a>
-
-        {/* Hızlı Arama Butonu (Mobilde ekrana yapışık) */}
-        <a
-          href={`tel:${cleanPhone}`}
-          aria-label="Telefonla Ara"
-          className="w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full flex items-center justify-center shadow-xl shadow-blue-600/40 hover:scale-110 active:scale-95 transition-all duration-300 sm:hidden"
-        >
-          <PhoneCall className="w-6 h-6 animate-pulse" />
-        </a>
-      </div>
+      {/* 10. SAĞ ALTA SABİTLENMİŞ AÇILIR WHATSAPP ŞABLON KARTI */}
+      <WhatsappWidget phone={phone} />
 
     </main>
   )
