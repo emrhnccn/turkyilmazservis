@@ -33,14 +33,14 @@ async function getSettings() {
       phone: '0552 116 41 28',
       siteName: 'Türkyılmaz Beyaz Eşya Servisi',
       address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
-      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
+      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Pendik', 'Kartal', 'Tuzla', 'Şifa']
     }
   } catch {
     return {
       phone: '0552 116 41 28',
       siteName: 'Türkyılmaz Beyaz Eşya Servisi',
       address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
-      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
+      serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Pendik', 'Kartal', 'Tuzla', 'Şifa']
     }
   }
 }
@@ -50,7 +50,7 @@ export default async function ContactPage() {
   const phone = settings?.phone || '0552 116 41 28'
   const cleanPhone = phone.replace(/\s+/g, '').replace('+', '')
   const shopAddress = settings?.address || 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli'
-  const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük']
+  const serviceAreas = settings?.serviceAreas || ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Pendik', 'Kartal', 'Tuzla', 'Şifa']
 
   const encodedAddress = encodeURIComponent(shopAddress)
   const mapEmbedUrl = `https://maps.google.com/maps?q=${encodedAddress}&t=&z=16&ie=UTF8&iwloc=&output=embed`
