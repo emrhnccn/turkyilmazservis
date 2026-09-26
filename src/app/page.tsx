@@ -35,7 +35,7 @@ async function getData() {
         phone: '0552 116 41 28',
         siteName: 'Türkyılmaz Beyaz Eşya Servisi',
         address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
-        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
+        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Pendik', 'Kartal', 'Tuzla', 'Şifa']
       }, 
       services: activeServices, 
       caseStudies 
@@ -46,7 +46,7 @@ async function getData() {
         phone: '0552 116 41 28',
         siteName: 'Türkyılmaz Beyaz Eşya Servisi',
         address: 'Fevziçakmak Mah. Doktor Zeki Acar Cad., Şebnem Sk. No:11, Darıca/Kocaeli',
-        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
+        serviceAreas: ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Pendik', 'Kartal', 'Tuzla', 'Şifa']
       }, 
       services: DEFAULT_SERVICES, 
       caseStudies: DEFAULT_CASES 
@@ -62,7 +62,7 @@ export default async function Home() {
   
   const serviceAreas = settings?.serviceAreas && settings.serviceAreas.length > 0 
     ? settings.serviceAreas 
-    : ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Kartepe']
+    : ['Gebze', 'Darıca', 'Çayırova', 'Dilovası', 'Körfez', 'İzmit', 'Gölcük', 'Derince', 'Pendik', 'Kartal', 'Tuzla', 'Şifa']
 
   // Görseldeki 13 markanın tam listesi
   const brands = [
